@@ -1,0 +1,26 @@
+<?php
+    error_reporting( ~E_NOTICE ); // avoid notice
+        
+    require 'conexion.php';
+
+    if(isset($_POST["inicio"])){
+        $usuario_i=$_POST["usuario_inicio"];
+        $contrasena=htmlentities($_POST["clave_inicio"]);
+
+        $consultar=$DB_con->prepare('SELECT * FROM cliente WHERE usuario=:usuario');
+        $consultar->bindParam(':usuario', $usuario_i);
+        $consultar->execute();
+
+        $verificacion=$consultar->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario_i==$verificacion["usuario"]) {
+            if($contrasena==$verificacion["contrasenia"]){
+                session_start();
+                $_SESSION["usuario"]=$verificacion["usuario"];
+                header("location:sesion.php");
+            }
+        }
+        else {
+            header("location:no_sesion.php");
+        }
+    }
