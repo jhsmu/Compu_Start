@@ -37,8 +37,8 @@
                     </div>
 
                     <div>
-                        <form class="d-flex px-5" role="iniciarsesion">
-                            <button class="btn btn-outline-success" type="submit">Iniciar Sesión</button>
+                        <form class="d-flex px-5" role="iniciarsesion" method="post">
+                            <button class="btn btn-outline-success" name="sesion" type="submit">Iniciar Sesión</button>
                         </form>
 
                     </div>

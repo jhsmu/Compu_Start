@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/4b93f520b2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./css/login-registrate.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/Logo/favicon-16x16.png">
     <title>Login</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
                 <input type="number" name="telefono" placeholder="Numero Telefonico" required>
                 <input type="email" name="email" placeholder="Correo" required>
                 <input type="password" name="clave" placeholder="Clave" required>
-                <input type="password" name="clave" placeholder="Confirmar Clave" required>
+                <input type="password" name="clave_c" placeholder="Confirmar Clave" required>
                 <button name="crear" type="submit">Crear</button>
             </form>
         </div>
