@@ -5,7 +5,7 @@
 
     if(isset($_POST["inicio"])){
         $usuario_i=$_POST["usuario_inicio"];
-        $contrasena=$_POST["clave_inicio"];
+        $contrasena=htmlentities($_POST["clave_inicio"]);
 
         $consultar=$DB_con->prepare('SELECT * FROM cliente WHERE usuario=:usuario');
         $consultar->bindParam(':usuario', $usuario_i);
