@@ -9,43 +9,49 @@
     <title>Login</title>
 </head>
 <body>
+
+
         <!-- login y registro -->
 <div class="inicio">
     <div class="container" id="main">
         <!-- registrar -->
         <div class="sign-up">
-            <form action="agregar_cliente.php" method="post">
-                <h1>Crear un Cuenta</h1>
+            <form action="./validaciones/agregar_clientes.php" method="post">
+                <h1>Crear Una Cuenta</h1>
                 <div class="div social-container">
                     
                     <a href="" class="social"><i class="fab fa-facebook"></i></a>
                     <a href="" class="social"><i class="fab fa-instagram"></i></a>
                     <a href="" class="social"><i class="fab fa-twitter"></i></a>
                 </div>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Digite todos los campos</p>
                 <input type="text" name="nombre" placeholder="Nombre Completo" required>
                 <input type="text" name="usuario" placeholder="Usuario" required>
                 <input type="text" name="direccion" placeholder="Dirección" required>
-                <input type="number" name="telefono" placeholder="Número Telefonico" required>
+                <input type="number" name="telefono" placeholder="Numero Telefonico" required>
                 <input type="email" name="email" placeholder="Correo" required>
                 <input type="password" name="clave" placeholder="Clave" required>
+                <input type="password" name="clave" placeholder="Confirmar Clave" required>
                 <button name="crear" type="submit">Crear</button>
             </form>
         </div>
                 <!-- iniciar sesion -->
      <div class="sign-in">
-         <form action="inicio_sesion.php" method="post" >
-          <h1>Iniciar Sesion</h1>
+         <form action="./validaciones/iniciosesion.php" method="post">
+            <div class="logo">
+            <img class="avatar" src="./img/logo/logo.jfif" alt="logo">
+            </div>
+          <h1>Iniciar Sesión</h1>
             <div class="div social-container">
                             
               <a href="" class="social"><i class="fa fa-facebook"></i></a>
               <a href="" class="social"><i class="fa fa-instagram"></i></a>
               <a href="" class="social"><i class="fa fa-twitter"></i></a>
              </div>
-             <p>Lorem ipsum dolor sit amet.</p>
-             <input type="text" name="usuario_inicio" placeholder="Digite Su Usuario" required>
-             <input type="password" name="clave_inicio" placeholder="Digite Su Clave" required>
-             <button name="inicio" type="submit">Iniciar Sesion</button>
+             <p>Digite todos los campos</p>
+             <input type="text" name="usuario_inicio" placeholder="Usuario" required>
+             <input type="password" name="clave_inicio" placeholder="Clave" required>
+             <button name="inicio" type="submit" >Iniciar Sesión</button>
         </form>
     </div>
 
@@ -53,13 +59,13 @@
         <div class="overlay">
             <div class="overlay-left">
                 <h1>Bienvenido</h1>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button id="signIn">Iniciar Sesion</button>
+                <p>Si ya estas registrado inicia sesión</p>
+                <button id="signIn">Iniciar Sesión</button>
             </div>
             <div class="overlay-right">
                 <h1>Hola</h1>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <button id="signUp">Crear Cuenta</button>
+                <p>¿Aún no te has Registrado?</p>
+                <button id="signUp">Crear Una Cuenta</button>
             </div>
         </div>
     </div>

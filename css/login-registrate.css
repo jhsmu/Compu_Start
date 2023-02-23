@@ -1,10 +1,22 @@
-*{
+.logo .avatar {
+    margin-top: 70px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     background: #ccc;
 }
-.inicio{
+
+.inicio {
     align-items: center;
     display: flex;
     font-family: 'Shantell Sans', cursive;
@@ -14,7 +26,8 @@ body{
     min-height: 100%;
     margin: 3%;
 }
-.container{
+
+.container {
     position: relative;
     width: 768px;
     max-width: 100%;
@@ -22,26 +35,30 @@ body{
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-sizing: 0 14px 28px rbga(0,0,0,0.25),
-                0 10px 10px rbga(0,0,0,0.22);
+    box-sizing: 0 14px 28px rbga(0, 0, 0, 0.25), 0 10px 10px rbga(0, 0, 0, 0.22);
 }
-.sign-up, .sign-in{
+
+.sign-up,
+.sign-in {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
 }
-.sign-up{
+
+.sign-up {
     width: 50%;
     opacity: 0;
     z-index: 1;
 }
-.sign-in{
+
+.sign-in {
     width: 50%;
     z-index: 2;
 }
-form{
+
+form {
     background: #fff;
     display: flex;
     align-items: center;
@@ -51,19 +68,22 @@ form{
     height: 100%;
     text-align: center;
 }
-h1{
+
+h1 {
     font-family: 'Shantell Sans', cursive;
     font-weight: bold;
     margin: 0;
 }
-p{
+
+p {
     font-size: 14px;
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
     margin: 15px 0 20px;
 }
-input{
+
+input {
     background: #eee;
     padding: 12px 15px;
     margin: 8px 15px;
@@ -72,13 +92,15 @@ input{
     border: none;
     outline: none;
 }
-a{
+
+a {
     color: #333;
     font-size: 14px;
     text-decoration: none;
     margin: 15px 0;
 }
-button{
+
+button {
     color: #fff;
     background: #ff4b2b;
     font-size: 12px;
@@ -93,22 +115,28 @@ button{
     transition: transform 80ms ease-in;
     cursor: pointer;
 }
-button:active{
+
+button:active {
     transform: scale(0.90);
 }
-#signUp, #signIn{
+
+#signUp,
+#signIn {
     background-color: transparent;
     border: 2px solid #fff;
 }
-.container.right-panel-active .sign-in{
+
+.container.right-panel-active .sign-in {
     transform: translateX(100%);
 }
-.container.right-panel-active .sign-up{
+
+.container.right-panel-active .sign-up {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
 }
-.overlay-container{
+
+.overlay-container {
     position: absolute;
     top: 0;
     left: 50%;
@@ -118,10 +146,12 @@ button:active{
     transition: transform 0.6s ease-in-out;
     z-index: 100;
 }
-.container.right-panel-active .overlay-container{
+
+.container.right-panel-active .overlay-container {
     transform: translateX(-100%);
 }
-.overlay{
+
+.overlay {
     position: relative;
     color: #fff;
     background: #ff416c;
@@ -131,14 +161,17 @@ button:active{
     /* background: linear-gradient(to right,#E0144C, #FF5858); */
     /* background: linear-gradient(to right,#630000, #A13333); */
     /* background: linear-gradient(to right,#FFD07F, #FDA65D); */
-    background: linear-gradient(to right,#1B120F, #7a7a7a);
+    background: linear-gradient(to right, #1B120F, #7a7a7a);
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
-.container.right-panel-active .overlay{
+
+.container.right-panel-active .overlay {
     transform: translateX(50%);
 }
-.overlay-left, .overlay-right{
+
+.overlay-left,
+.overlay-right {
     position: absolute;
     display: flex;
     align-items: center;
@@ -152,20 +185,25 @@ button:active{
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
-.overlay-left{
+
+.overlay-left {
     transform: translateX(-20%);
 }
-.overlay-right{
+
+.overlay-right {
     right: 0;
     transform: translateX(0);
 }
-.container.right-panel-active .overlay-left{
+
+.container.right-panel-active .overlay-left {
     transform: translateX(0);
 }
-.container.right-panel-active .overlay-right{
+
+.container.right-panel-active .overlay-right {
     transform: translateX(20%);
 }
-.social-container a{
+
+.social-container a {
     height: 40px;
     width: 40px;
     margin: 0 5px;
@@ -175,14 +213,17 @@ button:active{
     border: 1px solid #ccc;
     border-radius: 50%;
 }
-.social-container a:hover{
-background: #AAAAAA;
+
+.social-container a:hover {
+    background: #AAAAAA;
 }
 
+
 /* Encabezado login */
-header{
+
+header {
     background-image: url(https://www.solofondos.com/wp-content/uploads/2021/03/62dddd03bab522af0b94fa33fa1fa45d.jpg);
-    background-position: 90px ;
+    background-position: 90px;
     min-height: 250px;
     width: 100%;
 }
