@@ -4,24 +4,23 @@
     require '../database/conexion.php';
 
     if(isset($_POST["inicio"])){
-        $usuario_i=$_POST["usuario_inicio"];
-        $contrasena=htmlentities($_POST["clave_inicio"]);
+        $email_i=$_POST["email"];
+        $contrasena=md5(htmlentities($_POST["clave_inicio"]));
 
-        $consultar=$DB_con->prepare('SELECT * FROM cliente WHERE usuario=:usuario');
-        $consultar->bindParam(':usuario', $usuario_i);
+        $consultar=$DB_con->prepare('SELECT * FROM cliente WHERE email=:email');
+        $consultar->bindParam(':email', $email_i);
         $consultar->execute();
 
         $verificacion=$consultar->fetch(PDO::FETCH_ASSOC);
 
-        if ($usuario_i==$verificacion["usuario"] and $contrasena==$verificacion["contrasenia"] ) {
+        if ($email_i==$verificacion["email"] and $contrasena==$verificacion["contrasenia"] ) {
                 session_start();
-                $_SESSION["usuario"]=$verificacion["usuario"];
-                header("location: ../inicio.php");
-                echo '<script> alert("registro incorrecto")</script>';
+                $_SESSION["usuario"]=$verificacion["nombre"].' '.$verificacion['apellido'];
+                header("location: ../sesion.php");
         }
         else {
-            header("location: ../no_sesion.php");
-            echo '<script> alert("a")</script>';
+            header("location:../login-registro.php");
+            echo '<script> alert("Inicio de sesión incorrecto, por favor verifique sus datos")</script>';
         }
     }
 

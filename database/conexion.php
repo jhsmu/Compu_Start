@@ -3,7 +3,7 @@
 $Localhost = 'localhost';
 $Usuario_BD = 'root';
 $Password_BD = '';
-$Nombre_BD = 'compu_star';
+$Nombre_BD = 'compu_start';
 
 try{
   $DB_con = new PDO("mysql:host={$Localhost};dbname={$Nombre_BD};charset=UTF8",$Usuario_BD,$Password_BD);

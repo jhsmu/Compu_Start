@@ -24,14 +24,14 @@ body {
     justify-content: center;
     flex-direction: column;
     min-height: 100%;
-    margin: 3%;
+    margin: 5px;
 }
 
 .container {
     position: relative;
-    width: 768px;
+    width: 968px;
     max-width: 100%;
-    min-height: 580px;
+    min-height: 680px;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -85,19 +85,20 @@ p {
 
 input {
     background: #eee;
-    padding: 12px 15px;
-    margin: 8px 15px;
-    width: 100%;
+    padding: 10px 10px;
+    margin: 3px 10px;
+    width: 75%;
     border-radius: 5px;
     border: none;
     outline: none;
+    flex-direction: column;
 }
 
 a {
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 5px 0;
 }
 
 button {
@@ -218,12 +219,3 @@ button:active {
     background: #AAAAAA;
 }
 
-
-/* Encabezado login */
-
-header {
-    background-image: url(https://www.solofondos.com/wp-content/uploads/2021/03/62dddd03bab522af0b94fa33fa1fa45d.jpg);
-    background-position: 90px;
-    min-height: 250px;
-    width: 100%;
-}
