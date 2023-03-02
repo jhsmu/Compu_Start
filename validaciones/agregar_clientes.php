@@ -103,8 +103,9 @@ if (isset($_POST["crear"])) {
 
         try {
             if ($agregar->execute()) {
-            echo '<script> alert("registro correcto")</script>';
-            echo '<a href="../login-registro.php">Regresar al registro</a>';
+            session_start();
+            $_SESSION["registro"]="registro creado con exito";
+            header("location:../login-registro.php");
         } else {
             echo '<script> alert("registro incorrecto")</script>';
             echo '<a href="../login-registro.php">Regresar al registro</a>';

@@ -9,17 +9,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/login-registrate.css">
     <link rel="stylesheet" href="./css/headerinicio.css">
-    <link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css
-" rel="stylesheet">
+    <script type='text/javascript' src=".\js\validaciones.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Login</title>
 </head>
 
 <body>
-
     <?php include(("./componentes/headerlogin.php")); ?>
-
-   
+    <?php
+    session_start();
+    error_reporting(0);
+    if ($_SESSION["registro"] == "registro creado con exito"){
+        echo ('<script>alert("El registro ha sido creado con exito")</script>');
+    }else{
+        session_abort();
+    }
+    ?>
 
     <!-- login y registro -->
     <div class="inicio">
@@ -35,6 +40,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css
                         <a href="" class="social"><i class="fab fa-twitter"></i></a>
                     </div>
                     <p>Digite todos los campos</p>
+<<<<<<< Updated upstream
                     <input type="text" name="nombre" placeholder="Nombres" required>
                     <input type="text" name="apellido" placeholder="Apellidos" required>
                     <input type="text" name="direccion" placeholder="Dirección" required>
@@ -42,13 +48,22 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css
                     <input type="email" name="email_registro" placeholder="Correo" required>
                     <input type="password" name="clave" placeholder="Ingresar una clave clave mayor a 8 dígitos" required>
                     <input type="password" name="clave_c" placeholder="Ingresar la clave nuevamente" required>
+=======
+                    <input autocomplete="on" onchange="nombre1()" type="text" name="nombre" id="nombre" placeholder="Nombres" required>
+                    <input autocomplete="on" onchange="apellido1()" type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
+                    <input autocomplete="on" onchange="direccion1()" type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+                    <input autocomplete="on" onchange="telefono1()" type="number" name="telefono" id="telefono" inputmode="tel" placeholder="Numero Telefonico" required>
+                    <input autocomplete="on" onchange="correo1()" type="email" name="email_registro" id="email_registro" placeholder="Correo" required>
+                    <input onchange="contraseña()" type="password" name="clave" id="clave" placeholder="Ingresar una clave clave mayor a 8 dígitos" required>
+                    <input onchange="verificarContraseña()" type="password" name="clave_c" id="clave_c"  placeholder="Ingresar la clave nuevamente" required>
+>>>>>>> Stashed changes
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                         <label class="form-check-label" for="flexCheckDefault">
                             Acepto Términos Y Condiciones
                         </label>
                     </div>
-                    <button name="crear" type="submit">Crear</button>
+                    <button onclick="comprobar()" name="crear" type="submit">Crear</button>
                 </form>
             </div>
             <!-- iniciar sesion -->
