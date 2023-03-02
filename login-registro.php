@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css
                     <input type="text" name="direccion" placeholder="Dirección" required>
                     <input type="number" name="telefono" inputmode="tel" placeholder="Numero Telefonico" required>
                     <input type="email" name="email_registro" placeholder="Correo" required>
-                    <input type="password" name="clave" placeholder="Clave" required>
+                    <input type="password" name="clave" placeholder="Ingresar una clave mayor a 6 dígitos" required>
                     <input type="password" name="clave_c" placeholder="Confirmar Clave" required>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
