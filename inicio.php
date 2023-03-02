@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +19,7 @@
 
 <body>
     <header>
-        <?php include("./componentes/header.php"); ?>
+        <?php include("./componentes/headerCliente.php"); ?>
     </header>
 
     <div class="container ">

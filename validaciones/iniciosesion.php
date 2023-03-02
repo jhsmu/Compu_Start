@@ -16,7 +16,7 @@
         if ($email_i==$verificacion["email"] and $contrasena==$verificacion["contrasenia"] ) {
                 session_start();
                 $_SESSION["usuario"]=$verificacion["nombre"].' '.$verificacion['apellido'];
-                header("location: ../sesion.php");
+                header("location: ../inicio.php");
         }
         else {
             header("location:../login-registro.php");
