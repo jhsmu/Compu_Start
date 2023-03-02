@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    error_reporting(0);
+    if ($_SESSION["registro"] == "registro creado con exito"){
+        echo ('<script>alert("El registro ha sido creado con exito")</script>');
+        session_destroy();
+    }else{
+        session_abort();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,15 +26,6 @@
 
 <body>
     <?php include(("./componentes/headerlogin.php")); ?>
-    <?php
-    session_start();
-    error_reporting(0);
-    if ($_SESSION["registro"] == "registro creado con exito"){
-        echo ('<script>alert("El registro ha sido creado con exito")</script>');
-    }else{
-        session_abort();
-    }
-    ?>
 
     <!-- login y registro -->
     <div class="inicio">
@@ -40,15 +41,6 @@
                         <a href="" class="social"><i class="fab fa-twitter"></i></a>
                     </div>
                     <p>Digite todos los campos</p>
-<<<<<<< Updated upstream
-                    <input type="text" name="nombre" placeholder="Nombres" required>
-                    <input type="text" name="apellido" placeholder="Apellidos" required>
-                    <input type="text" name="direccion" placeholder="Dirección" required>
-                    <input type="number" name="telefono" inputmode="tel" placeholder="Numero Telefonico" required>
-                    <input type="email" name="email_registro" placeholder="Correo" required>
-                    <input type="password" name="clave" placeholder="Ingresar una clave clave mayor a 8 dígitos" required>
-                    <input type="password" name="clave_c" placeholder="Ingresar la clave nuevamente" required>
-=======
                     <input autocomplete="on" onchange="nombre1()" type="text" name="nombre" id="nombre" placeholder="Nombres" required>
                     <input autocomplete="on" onchange="apellido1()" type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
                     <input autocomplete="on" onchange="direccion1()" type="text" name="direccion" id="direccion" placeholder="Dirección" required>
@@ -56,7 +48,6 @@
                     <input autocomplete="on" onchange="correo1()" type="email" name="email_registro" id="email_registro" placeholder="Correo" required>
                     <input onchange="contraseña()" type="password" name="clave" id="clave" placeholder="Ingresar una clave clave mayor a 8 dígitos" required>
                     <input onchange="verificarContraseña()" type="password" name="clave_c" id="clave_c"  placeholder="Ingresar la clave nuevamente" required>
->>>>>>> Stashed changes
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                         <label class="form-check-label" for="flexCheckDefault">
