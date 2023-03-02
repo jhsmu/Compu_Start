@@ -48,7 +48,7 @@
                         <div class="socia-container ">
                             <a class="nav-link" href="./login-registro.php" id="socia"><i class="fa fa-user"></i></a>
                         </div>
-                        <label for="">Inicia Sesión</label>
+                        <a href="./validaciones/cerrar_sesion.php">Cerrar</a>
                     </li>
                 </ul>
             </div>
