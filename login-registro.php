@@ -1,13 +1,9 @@
 <?php
     session_start();
     error_reporting(0);
-    if ($_SESSION["registro"] == "registro creado con exito"){
-        echo ('<script>alert("El registro ha sido creado con exito")</script>');
-        session_destroy();
-    }else{
-        session_abort();
-    }
-?>
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,10 +18,12 @@
     <script type='text/javascript' src=".\js\validaciones.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <?php include(("./componentes/headerlogin.php")); ?>
+
 
     <!-- login y registro -->
     <div class="inicio">
@@ -112,6 +110,19 @@
     <script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js
 "></script>
+<?php
+    if (isset($_SESSION["registro"])){
+        echo ('<script>Swal.fire({
+            title: "Registro exitoso",
+            text: "Ahora puedes iniciar tu sesión",
+            icon: "success" 
+        });
+        </script>');
+        session_destroy();
+    }else{
+        session_abort();
+    }
+?>
 </body>
 
 </html>

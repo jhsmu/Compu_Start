@@ -6,8 +6,13 @@ function nombre1() {
         document.getElementById("nombre").style.borderColor = "#008000";
     } else {
         document.getElementById("nombre").style.borderColor = "#FF0000";
-        alert("Por favor, evite el uso de números y caracteres especiales(,.;{}[])");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'Evite el uso de números y caracteres especiales(,.;{}[])',
+            });
         document.getElementById("nombre").value = "";
+        return false;
     }
 }
 function apellido1() {
@@ -18,7 +23,11 @@ function apellido1() {
         document.getElementById("apellido").style.borderColor = "#008000";
     } else {
         document.getElementById("apellido").style.borderColor = "#FF0000";
-        alert("Por favor, evite el uso de números y caracteres especiales(,.;{}[])");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'Evite el uso de números y caracteres especiales(,.;{}[])',
+            });
         document.getElementById("apellido").value = "";
     }
 }
@@ -38,10 +47,15 @@ function telefono1() {
 
     if (telefono.length == 10 & RegEx.test(telefono) == true) {
         document.getElementById("telefono").style.borderColor = "#008000";
-    } else {
+    }else {
         document.getElementById("telefono").style.borderColor = "#FF0000";
-        alert("Solo numeros con 10 dígitos");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'Ingrese números de 10 digitos',
+            });
         document.getElementById("telefono").value = "";
+        return false;
     }
 }
 
@@ -52,7 +66,12 @@ function correo1() {
         document.getElementById("email_registro").style.borderColor = "#008000";
     } else {
         document.getElementById("email_registro").style.borderColor = "#FF0000";
-        alert("Por favor ingrese un correo valido");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'Ingrese un correo valido añadiendo "@"'
+            });
+        document.getElementById("email_registro").value = "";
     }
 }
 
@@ -61,16 +80,32 @@ function contraseña(){
 
     if(contraseña.length < 8){
         document.getElementById("clave").style.borderColor = "#FF0000";
-        alert("Solo la contraseña tiene menos de 8 dígitos");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'La contraseña debe tener 8 o mas caracteres'
+            });
     } else if (/[A-Z]+/.test(contraseña) != true){
         document.getElementById("clave").style.borderColor = "#FF0000";
-        alert("Solo la contraseña tiene que tener al menos una mayuscula");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'La contraseña tiene que tener al menos una mayuscula'
+            });
     } else if (/[a-z]+/.test(contraseña) != true){
         document.getElementById("clave").style.borderColor = "#FF0000";
-        alert("Solo la contraseña tiene que tener al menos una minuscula");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'La contraseña tiene que tener al menos una minuscula'
+            });
     } else if (/[0-9]+/.test(contraseña) != true){
         document.getElementById("clave").style.borderColor = "#FF0000";
-        alert("Solo la contraseña tiene que tener al menos un número");
+        Swal.fire({
+            icon: 'info',
+            title: 'Por Favor',
+            text: 'La contraseña tiene que tener al menos un número'
+            });
     }else{
         document.getElementById("clave").style.borderColor = "#008000";
     }
@@ -83,7 +118,13 @@ function verificarContraseña(){
     if(contraseña === contraseña_c){
         document.getElementById("clave_c").style.borderColor = "#008000";
     }else{
-        alert("las contraseñas no son iguales")
+        swal.fire({
+            title:'Oops..',
+            text: 'Las contraseñas no son iguales',
+            icon: 'error'
+        });
+        document.getElementById("clave_c").value="";
+        return false;
     }
 }
 
@@ -97,8 +138,19 @@ function comprobar() {
     let contraseña_c = document.getElementById("clave_c").value;
 
 
-    if (nombre == "" | apellido == "" | direccion == "" | telefono == "" | correo == "" | contraseña == "" | contraseña_c == "") {
-        alert("Por favor llene el formulario completamente");
+    if (nombre == "" || apellido == "" || direccion == "" || telefono == "" || correo == "" || contraseña == "" || contraseña_c == "") {
+        Swal.fire({
+            title: "Por favor",
+            text: "llene el formulario completamente",
+            icon: "info"
+        });
+        document.getElementById("crear").disabled=true;
         event.preventDefault();
+    }else{
+        Swal.fire({
+            title: "Registro exitoso",
+            text: "Ahora puedes iniciar tu sesión",
+            icon: "success" 
+        })
     }
 }
