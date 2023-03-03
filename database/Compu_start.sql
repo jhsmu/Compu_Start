@@ -35,6 +35,8 @@ CREATE TABLE `cliente`
 (
   `email` varchar
 (80) NOT NULL,
+  `imagen` varchar
+(80) DEFAULT NULL,
   `apellido` varchar
 (50) NOT NULL,
   `nombre` varchar
@@ -57,11 +59,11 @@ CREATE TABLE `compra`
 (
   `id_compra` int
 (11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `id_proveedor` int
+(11) NOT NULL,
   `total` decimal
 (2,0) NOT NULL,
-  `id_proveedor` int
-(11) NOT NULL
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -92,6 +94,8 @@ CREATE TABLE `detalle_compra`
 
 CREATE TABLE `detalle_venta`
 (
+  `idDetalleVenta` int 
+  (11) PRIMARY KEY AUTO_INCREMENT,
   `id_venta` int
 (11) NOT NULL,
   `id_producto` int
@@ -247,6 +251,8 @@ CREATE TABLE `venta`
 (11) NOT NULL,
   `cliente` varchar
 (50) NOT NULL,
+  `total` decimal
+  (9,2) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp
 () ON
 UPDATE current_timestamp()
