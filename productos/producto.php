@@ -24,7 +24,7 @@
 </head>
 <body>
     <h1>Agregar Producto</h1>
-    <form action="./agregar_producto.php" method="post" enctype="multipart/form-data">
+    <form action="./agregarProducto.php" method="post" enctype="multipart/form-data">
         <input type="text" name="serial" placeholder="Ingrese el serial">
         <br>
         <br>
