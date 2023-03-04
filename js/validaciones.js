@@ -11,7 +11,6 @@ function nombre1() {
             title: 'Por Favor',
             text: 'Evite el uso de números y caracteres especiales(,.;{}[])',
             });
-        document.getElementById("nombre").value = "";
         return false;
     }
 }
@@ -28,7 +27,6 @@ function apellido1() {
             title: 'Por Favor',
             text: 'Evite el uso de números y caracteres especiales(,.;{}[])',
             });
-        document.getElementById("apellido").value = "";
     }
 }
 
@@ -54,15 +52,17 @@ function telefono1() {
             title: 'Por Favor',
             text: 'Ingrese números de 10 digitos',
             });
-        document.getElementById("telefono").value = "";
         return false;
     }
 }
 
 function correo1() {
     let correo = document.getElementById("email_registro").value;
+    let regex =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if (correo.includes("@") & correo.includes(".")) {
+/*    if (correo.includes("@") & correo.includes(".")) { */
+
+    if (regex.test(correo)){
         document.getElementById("email_registro").style.borderColor = "#008000";
     } else {
         document.getElementById("email_registro").style.borderColor = "#FF0000";
@@ -71,7 +71,6 @@ function correo1() {
             title: 'Por Favor',
             text: 'Ingrese un correo valido añadiendo "@"'
             });
-        document.getElementById("email_registro").value = "";
     }
 }
 
@@ -123,34 +122,28 @@ function verificarContraseña(){
             text: 'Las contraseñas no son iguales',
             icon: 'error'
         });
-        document.getElementById("clave_c").value="";
         return false;
     }
 }
 
-function comprobar() {
+function comprobar1() {
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;
     let direccion = document.getElementById("direccion").value;
     let telefono = document.getElementById("telefono").value;
-    let correo = document.getElementById("email").value;
+    let correo = document.getElementById("email_registro").value;
     let contraseña = document.getElementById("clave").value;
     let contraseña_c = document.getElementById("clave_c").value;
 
 
-    if (nombre == "" || apellido == "" || direccion == "" || telefono == "" || correo == "" || contraseña == "" || contraseña_c == "") {
+    if ((nombre == "") || (apellido == "") || (direccion == "") || (telefono == "") || (correo == "") || (contraseña == "") || (contraseña_c == "")) {
+        event.preventDefault();
         Swal.fire({
             title: "Por favor",
             text: "llene el formulario completamente",
             icon: "info"
         });
-        document.getElementById("crear").disabled=true;
-        event.preventDefault();
     }else{
-        Swal.fire({
-            title: "Registro exitoso",
-            text: "Ahora puedes iniciar tu sesión",
-            icon: "success" 
-        })
+        return
     }
 }
