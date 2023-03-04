@@ -27,7 +27,6 @@ if (isset($_POST["sesion"])) {
     <!-- encabezado -->
     <header>
     <?php include("./componentes/headerindex.php"); ?>
-    </header>
     
 <!-- cuerpo -->
 <div class="container ">
