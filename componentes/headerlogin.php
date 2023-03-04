@@ -9,7 +9,7 @@
     <ul class="navbar-nav ms-auto mb-lg-0">
     <li class="nav-item">
     <div class="socia-container"> 
-          <a class="nav-link" id="socia" href="./inicio.php"><i class="fa fa-door-open"></i></a>
+          <a class="nav-link" id="socia" href="./index.php"><i class="fa fa-door-open"></i></a>
     </div>
     </li
 </ul>

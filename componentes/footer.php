@@ -7,8 +7,8 @@
             </div>
             <div class="box">
                 <h2>Sobre Nosotros</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure cupiditate accusamus saepe quisquam mollitia, voluptatem aperiam voluptate commodi consequuntur.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iure cupiditate accusamus saepe quisquam mollitia, voluptatem aperiam voluptate commodi consequuntur.</p>
+                <p class="text">Techno Soluction es una empresa de dicada a la venta de de componentes electronicos para sus equipos de computo desde gabinetes hasta procesadores, placas madres, etc. </p>
+                <p class="text">Techno Soluction tiene componentes de muy buena calidad y precio ven y visitanos y veras de todos los componetes que tenemos para ti, no te quedes sin los tuyos </p>
             </div>
             <div class="box">
                 <h2>Siguenos</h2>
@@ -20,6 +20,6 @@
             </div>
         </div>
         <div class="grupo2">
-            <small>&copy; 2022 <b>Jhonatan Mena</b> --Todos Los Derechos Reservados</small>
+            <small>&copy; 2022 <b>Techno Soluction</b> --Todos Los Derechos Reservados</small>
         </div>
 </footer>

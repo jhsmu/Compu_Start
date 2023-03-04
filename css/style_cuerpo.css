@@ -20,7 +20,9 @@
        transform: scale(1.1);
        cursor: pointer;
    }
-
+/* .card-text{
+    text-align: justify;
+}    */
 /* swiper */
 
 .swiper{
@@ -142,3 +144,4 @@
       left: 26px !important;
   }
  
+  
