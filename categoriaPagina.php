@@ -1,4 +1,5 @@
 <?php
+session_start();
   error_reporting( ~E_NOTICE ); // avoid notice
 	
 	require_once './database/conexion.php';
@@ -18,7 +19,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css bootstrap -->
@@ -37,7 +38,7 @@
 </head>
 <body>
 <header>
-  <?php include(("./componentes/headerindex.php")); ?>
+  <?php include(("./componentes/headerinicio.php")); ?>
 </header>
 
 <br> <br>
@@ -56,7 +57,7 @@
                     <img src="./imagenes/memoria1.jpg"  height="250px" width="300px" alt="memoriaRAM4gb">
                     <div class="card-body">
                       <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
-                      <a href="./descripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver más</a>
+                      <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -98,7 +99,7 @@
                     <img src="./imagenes/memoria6.webp" height="350px" width="300px" alt="memoriaRAM4gb1Samsung">
                     <div class="card-body">
                       <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
-                      <a href="./descripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver más</a>
+                      <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver más</a>
                       <div class="col-md-6">
                       </div>
                     </div>
