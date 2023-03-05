@@ -20,7 +20,7 @@
                             <a class="nav-link " aria-current="page" href="./inicio.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="./nosotros.php">Nosotros</a>
+                            <a class="nav-link " href="">Nosotros</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@
                             ?>
                                 <ul>
                                 <li><a class="dropdown-item"
-                                        href="./paginaCategoria.php?id=<?php echo $categoria['id_categoria'] ?>"><?php echo $categoria['categoria'] ?></a>
+                                        href="./categoriaPagina.php?id=<?php echo $categoria['id_categoria'] ?>"><?php echo $categoria['categoria'] ?></a>
                                 </li>
                                 </ul>
                                 <?php
