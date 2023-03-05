@@ -241,6 +241,11 @@ CREATE TABLE `proveedor`
 
 -- --------------------------------------------------------
 
+INSERT INTO proveedor (id_proveedor, proveedor, correo, web, direccion) VALUES
+(1,'INTEL','intel@gmail.com', 'www.intel.com.co', 'Calle 35 #80A-26'),
+(2,'RYZEM','ryzem@gmail.com', 'www.ryzem.com.co', 'Calle 36 con Carrera 58-32'),
+(3,'NVIDIA','nvidia@gmail.com', 'www.nvidia.com.co', 'Calle 35 #80D-65 Edf. INTEL');
+
 --
 -- Estructura de tabla para la tabla `venta`
 --
