@@ -17,7 +17,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./inicio.php">Inicio</a>
+                            <a class="nav-link " aria-current="page" href="./index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="./nosotros.php">Nosotros</a>
@@ -46,7 +46,7 @@
                     <ul class="navbar-nav ms-auto mb-lg-0">
                         <li class="nav-item">
                             <div class="socia-container ">
-                            <a class="nav-link" href="./login-registrate.php" id="socia"><i class="fa fa-user"></i></a>
+                            <a class="nav-link" href="./login-registro.php" id="socia"><i class="fa fa-user"></i></a>
                             <label for="">Iniciar Sesión</label>
                     </div>
                         </li>   
