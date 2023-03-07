@@ -17,7 +17,7 @@ session_start();
 
         $marca=$consulta2->fetch(PDO::FETCH_ASSOC);
 
-        $consulta3=$DB_con->prepare('SELECT * FROM imagenes WHERE id_producto=:producto');
+        $consulta3=$DB_con->prepare('SELECT * FROM imagenes WHERE producto_id=:producto');
         $consulta3->bindParam('producto', $_GET['id']);
         $consulta3->execute();
 
