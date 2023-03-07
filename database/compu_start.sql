@@ -1,7 +1,6 @@
 --Creación de la Data Base
 
 CREATE DATABASE compu_start;
-USE DATABASE compu_start;
 
 ----Creación de las tablas
 
@@ -86,7 +85,8 @@ CREATE TABLE detalle_venta(
     id_venta INT(11) NOT NULL,
     id_producto INT(11) NOT NULL,
     cantidad_venta INT(11) NOT NULL,
-    total FLOAT(12,2) NOT NULL
+    precio_producto FLOAT(12,2) NOT NULL,
+    monto_total FLOAT(12,2) NOT NULL
 );
 
 ALTER TABLE producto ADD FOREIGN KEY(id_categoria)
