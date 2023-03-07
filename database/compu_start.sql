@@ -12,7 +12,7 @@ CREATE TABLE cliente(
     direccion VARCHAR(60) NOT NULL,
     telefono INT(15) NOT NULL,
     email VARCHAR(80) NOT NULL,
-    contraseña VARCHAR(100) NOT NULL
+    contrasenia VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE administrador(
@@ -20,7 +20,7 @@ CREATE TABLE administrador(
     nombre VARCHAR(60) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
     email VARCHAR(80) NOT NULL,
-    contraseña VARCHAR(100) NOT NULL
+    contrasenia VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE producto(
@@ -115,10 +115,10 @@ REFERENCES venta(id_venta);
 ALTER TABLE detalle_venta ADD FOREIGN KEY(id_producto)
 REFERENCES producto(id_producto);
 
-INSERT INTO cliente (nombre, apellido, direccion, telefono, email, contraseña) VALUES
+INSERT INTO cliente (nombre, apellido, direccion, telefono, email, contrasenia) VALUES
 ('Usuario', 'Prueba', 'Torre Norte SENA', 3001234567, 'usuario@gmail.com', 'Usuario12345');
 
-INSERT INTO administrador (nombre, apellido, email, contraseña) VALUES
+INSERT INTO administrador (nombre, apellido, email, contrasenia) VALUES
 ('Freymer', 'Sepulveda', 'administrador1@gmail.com', 'Administrador12345'),
 ('Jhonatan', 'Mena', 'administrador2@gmail.com', 'Administrador12345'),
 ('Leandro', 'Pastor', 'administrador3@gmail.com', 'Administrador12345'),
