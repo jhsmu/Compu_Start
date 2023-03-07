@@ -20,7 +20,7 @@
                             <a class="nav-link " aria-current="page" href="./inicio.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="">Nosotros</a>
+                            <a class="nav-link " href="./nosotros.php">Nosotros</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@
                             ?>
                                 <ul>
                                 <li><a class="dropdown-item"
-                                        href="./categoriaPagina.php?id=<?php echo $categoria['id_categoria'] ?>"><?php echo $categoria['categoria'] ?></a>
+                                        href="./pagina_categoria.php?id=<?php echo $categoria['id_categoria'] ?>"><?php echo $categoria['categoria'] ?></a>
                                 </li>
                                 </ul>
                                 <?php
@@ -46,9 +46,17 @@
 
                     <ul class="navbar-nav ms-auto mb-lg-0">
                         <li class="nav-item">
+                            <div class="socia-container ">
+                            <label for=""><?php echo $_SESSION["nombre"] ?></label>
+                            <a class="nav-link" href="./login-registrate.php" id="socia"><i class="fa fa-user"></i></a>
+                            
+                    </div>
+                        </li>
+                        <li class="nav-item">
                             <div class="socia-container">
                             <label for="">Cerrar Sesión</label>
                             <a class="nav-link" id="socia" href="./validaciones/cerrarSesion.php"><i class="fa fa-door-open"></i></a>
+                            
                             </div>
                         </li>   
                     </ul>
