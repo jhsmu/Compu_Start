@@ -1,6 +1,7 @@
 --Creación de la Data Base
 
 CREATE DATABASE compu_start;
+USE DATABASE compu_start;
 
 ----Creación de las tablas
 
@@ -126,7 +127,8 @@ INSERT INTO administrador (nombre, apellido, email, contrasenia) VALUES
 ('Santiago', 'Naranjo', 'administrador5@gmail.com', 'Administrador12345'),
 ('Oswaldo', 'Natera', 'administrador6@gmail.com', 'Administrador12345'),
 ('Miguel', 'Zapata', 'administrador7@gmail.com', 'Administrador12345'),
-('Diego', 'Montoya', 'administrador8@gmail.com', 'Administrador12345');
+('Diego', 'Montoya', 'administrador8@gmail.com', 'Administrador12345'),
+('Jose', 'Álvarez', 'administrador9@gmail.com', 'Administrador12345');
 
 INSERT INTO proveedor (proveedor, correo, direccion_web, direccion) VALUES
 ('INTEL','intel@gmail.com', 'www.intel.com.co', 'Calle 35 #80A-26'),

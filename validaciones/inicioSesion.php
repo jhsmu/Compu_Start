@@ -6,22 +6,37 @@
     if(isset($_POST["inicio"])){
         $email_i=$_POST["email"];
         $contrasena=md5(htmlentities($_POST["clave_inicio"]));
+        $contra=htmlentities($_POST["clave_inicio"]);
 
-        $consultar=$DB_con->prepare('SELECT * FROM cliente WHERE email=:email');
-        $consultar->bindParam(':email', $email_i);
-        $consultar->execute();
+        $consultar1=$DB_con->prepare('SELECT * FROM administrador WHERE email=:email');
+        $consultar1->bindParam(':email', $email_i);
+        $consultar1->execute();
 
-        $verificacion=$consultar->fetch(PDO::FETCH_ASSOC);
+        $admin=$consultar1->fetch(PDO::FETCH_ASSOC);
 
-        if ($email_i==$verificacion["email"] and $contrasena==$verificacion["contrasenia"] ) {
-                session_start();
-                $_SESSION["usuario"]=$verificacion["nombre"].' '.$verificacion['apellido'];
-                header("location: ../inicio.php");
+        if ($email_i==$admin["email"] and $contra==$admin["contrasenia"]) {
+            session_start();
+            $_SESSION["admin"]=$admin["nombre"];
+            header('location:../admin/indexadmin.php');
+        }else {
+            $consultar=$DB_con->prepare('SELECT * FROM cliente WHERE email=:email');
+            $consultar->bindParam(':email', $email_i);
+            $consultar->execute();
+
+            $verificacion=$consultar->fetch(PDO::FETCH_ASSOC);
+
+            if ($email_i==$verificacion["email"] and $contrasena==$verificacion["contrasenia"] ) {
+                    session_start();
+                    $_SESSION["usuario"]=$verificacion["nombre"].' '.$verificacion['apellido'];
+                    header("location: ../inicio.php");
+            }
+            else {
+                header("location:../login-registro.php");
+                echo '<script> alert("Inicio de sesión incorrecto, por favor verifique sus datos")</script>';
+        }  
         }
-        else {
-            header("location:../login-registro.php");
-            echo '<script> alert("Inicio de sesión incorrecto, por favor verifique sus datos")</script>';
-        }
+
+        
     }
 
 
