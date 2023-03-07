@@ -96,7 +96,7 @@ session_start();
                 <label for="int">Cantidad:</label>
                 <input type="int" id="cantidad">
                 <button type="submit" class="btn btn-success btn-lg">Comprar</button>
-                <button type="button" class="btn btn-outline-secondary"> <a href="./pagina_categoria.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
+                <button type="button" class="btn btn-outline-secondary"> <a href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
                 <br> <br> <br>
                 <h5><a href="#caracteristicas">Ver más características...</a> </h5>
 
