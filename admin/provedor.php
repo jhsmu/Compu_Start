@@ -39,115 +39,50 @@
             <!--/Sidebar-->
             <!--Main-->
             <main class="bg-white-500 flex-1 p-3 overflow-hidden">
-
-                <div class="flex flex-col">
                     <!--Grid Form-->
 
                     <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
                         <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
                             <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
-                                Provedor
+                               Lista de clientes
                             </div>
                             <div class="p-3">
-                                <form class="w-full">
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                                                   for="grid-first-name">
-                                                Serial
-                                            </label>
-                                            <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-                                                   id="grid-first-name" type="text" placeholder="Ingrese el serial">
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                                                   for="grid-last-name">
-                                                Nombre del producto
-                                            </label>
-                                            <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-                                                   id="grid-last-name" type="text" placeholder="Ingrese el nombre del producto">
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="w-full px-3">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-password">
-                                                Descripción
-                                            </label>
-                                            <textarea class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                            id="grid-password" rows="4"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-2">
-                                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-city">
-                                               Cantidad
-                                            </label>
-                                            <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                                   id="grid-city" type="number" placeholder="Cantidad del producto">
-                                        </div>
-                                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-city">
-                                               Precio
-                                            </label>
-                                            <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                                   id="grid-city" type="text" placeholder="Precio del producto">
-                                        </div>
-                                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-state">
-                                                Elegir Una Categoria
-                                            </label>
-                                            <div class="relative">
-                                                <select class="block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                                        id="grid-state">
-                                                    <option value="">Seleccione una opción</option>
-                                                    <option>New Mexico</option>
-                                                    <option>Missouri</option>
-                                                    <option>Texas</option>
-                                                </select>
-                                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-grey-darker">
-                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                                         viewBox="0 0 20 20">
-                                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-2">
-                                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-state">
-                                                Elegir Una Marca
-                                            </label>
-                                            <div class="relative">
-                                                <select class="block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                                        id="grid-state">
-                                                    <option value="">Seleccione una opción</option>
-                                                    <option>New Mexico</option>
-                                                    <option>Missouri</option>
-                                                    <option>Texas</option>
-                                                </select>
-                                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-grey-darker">
-                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                                         viewBox="0 0 20 20">
-                                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
-                                        <div class="mb-2  rounded shadow-sm w-full md:w-1/1 lg:w-1/3" ></div>
-                                        <button class="bg-transparent hover:bg-green-500 text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent  rounded-full">
-                                            Agregar
-                                        </button>
-                                    </div>
-                                    
-                                </form>
+                                <table class="table-responsive w-full rounded">
+                                    <thead>
+                                      <tr>
+                                        <th class="border w-1/7 px-4 py-2">Id</th>
+                                        <th class="border w-1/6 px-4 py-2">Nombres</th>
+                                        <th class="border w-1/6 px-4 py-2">Apellidos</th>
+                                        <th class="border w-1/6 px-4 py-2">Dirección</th>
+                                        <th class="border w-1/7 px-4 py-2">Email</th>
+                                        <th class="border w-1/5 px-4 py-2">Telefono</th>
+                                        <th class="border w-1/5 px-4 py-2">Accion</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        while($filas=mysqli_fetch_assoc($resultado)){
+                                            ?>
+                                        <tr>
+                                            <td class="border px-4 py-2"><?php echo $filas['id']?></td>
+                                            <td class="border px-4 py-2"><?php echo $filas['nombre']?></td>
+                                            <td class="border px-4 py-2"><?php echo $filas['apellido']?></td>
+                                            <td class="border px-4 py-2"><?php echo $filas['direccion']?></td>
+                                            <td class="border px-4 py-2"><?php echo $filas['email']?></td>
+                                            <td class="border px-4 py-2"><?php echo $filas['telefono']?></td>
+                                            <td class="border px-4 py-2">
+                                                <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white" href="./editar/actualizar.php?id<?php echo $filas['id']?>">
+                                                        <i class="fas fa-edit"></i></a>
+                                                <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                        <i class="fas fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
