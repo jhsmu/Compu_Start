@@ -10,14 +10,16 @@
         $id = $_POST['id'];
         $proveedor = $_POST['proveedor'];
         $correo = $_POST['correo'];
-        $web = $_POST['web'];
+        $web = $_POST['direccion_web'];
         $direccion = $_POST['direccion'];
 
-        $query = $connection->prepare("UPDATE proveedor SET proveedor=?, correo=?, web=?, direccion=? WHERE id_proveedor=?");// Traduzco mi petición
+        $query = $connection->prepare("UPDATE proveedor SET proveedor=?, correo=?, direccion_web=?, direccion=? WHERE id_proveedor=?");// Traduzco mi petición
         $actualizar = $query->execute([$proveedor, $correo, $web, $direccion, $id]); //Ejecuto mi petición
 
         if ($actualizar) {
-            echo "<h2> Datos del Proveedor actualizados <h2>";
+            session_start();
+            $_SESSION['actualizar'] = 'registro';
+            header("location: ../admin/provedor.php");
         } else {
             echo "<h2> Error al Actualizar <h2>";
         }

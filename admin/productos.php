@@ -153,6 +153,26 @@
                     </div>
                     <!--/Grid Form-->
                 </div>
+                <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
+                    <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
+                        <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
+                            Agregar imagen
+                        </div>
+                        <div class="p-3">
+                            <form class="w-full" action="">
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                                                   for="grid-first-name">
+                                                Imagen
+                                            </label>
+                                            <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                            id="grid-first-name" type="file" placeholder="Ingrese el serial">
+                                        </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </main>
             <!--/Main-->
         </div>

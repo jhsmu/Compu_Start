@@ -40,7 +40,7 @@
 						<td><?php echo $proveedor["id_proveedor"]."<br>"; ?></td>
                         <td><?php echo $proveedor["proveedor"]."<br>"; ?></td>
                         <td><?php echo $proveedor["correo"]."<br>"; ?></td>
-                        <td><?php echo $proveedor["web"]."<br>"; ?></td>
+                        <td><?php echo $proveedor["direccion_web"]."<br>"; ?></td>
 						<td><?php echo $proveedor["direccion"]."<br>"; ?></td>
                         <td> <a href="editarProveedor.php?id=<?php echo $proveedor["id_proveedor"]; ?>">Editar</a> </td>
 					</tr>

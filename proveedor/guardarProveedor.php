@@ -8,15 +8,17 @@
 
     $proveedor = $_POST['proveedor'];
     $correo = $_POST['correo'];
-    $web = $_POST['web'];
+    $web = $_POST['direccion_web'];
     $direccion = $_POST['direccion'];
 
-    $query = $connection->prepare("INSERT INTO proveedor(proveedor, correo, web, direccion) VALUES(?, ?, ?, ?)");// Traduzco mi petición
+    $query = $connection->prepare("INSERT INTO proveedor(proveedor, correo, direccion_web, direccion) VALUES(?, ?, ?, ?)");// Traduzco mi petición
     $guardar = $query->execute([$proveedor, $correo, $web, $direccion]); //Ejecuto mi petición
 
     if ($guardar) {
-        echo "<h2> Proveedor creado <h2>";
+        session_start();
+        $_SESSION['proveedor'] = 'registro';
+        header("location: ../admin/actualizaciones.php");
+        
     } else {
-        echo "<h2> Error al crear el proveedor <h2>";
+        echo "<script> alert 'Error al crear el proveedor' </script>";
     }
-    echo "<a href='consultaProveedor.php'>Regresar</a>";

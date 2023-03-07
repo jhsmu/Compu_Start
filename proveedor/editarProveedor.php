@@ -32,7 +32,7 @@
         <label for="">Correo</label>
         <input type="text" class="correo" name="correo" id="correo" value="<?php echo $proveedor['correo']; ?>"><br>
         <label for="">Web</label>
-        <input type="text" class="web" name="web" id="web" value="<?php echo $proveedor['web']; ?>"><br><br>
+        <input type="text" class="direccion_web" name="direccion_web" id="direccion_web" value="<?php echo $proveedor['direccion_web']; ?>"><br><br>
         <label for="">Dirección</label>
         <input type="text" class="direccion" name="direccion" id="direccion" value="<?php echo $proveedor['direccion']; ?>"><br><br>
         <button type="submit">Enviar</button> <br> <br>
