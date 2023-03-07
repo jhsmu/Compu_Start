@@ -44,7 +44,7 @@ CREATE TABLE `cliente`
   `direccion` varchar
 (100) NOT NULL,
   `telefono` int
-(11) NOT NULL,
+(15) NOT NULL,
   `contrasenia` varchar
 (100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -62,7 +62,7 @@ CREATE TABLE `compra`
   `id_proveedor` int
 (11) NOT NULL,
   `total` decimal
-(2,0) NOT NULL,
+(12,2) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -80,10 +80,10 @@ CREATE TABLE `detalle_compra`
 (11) NOT NULL,
   `id_producto` int
 (11) NOT NULL,
-  `cantidad` decimal
-(2,0) NOT NULL,
+  `cantidad` int
+(11) NOT NULL,
   `valor` decimal
-(2,0) NOT NULL
+(12,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -103,7 +103,7 @@ CREATE TABLE `detalle_venta`
   `cantidad_venta` int
 (11) NOT NULL,
   `total` decimal
-(2,0) NOT NULL
+(12,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -194,7 +194,7 @@ CREATE TABLE `producto`
   `cantidad` int
 (11) NOT NULL,
   `precio` decimal
-(2,0) NOT NULL,
+(12,2) NOT NULL,
   `id_categoria` int
 (11) NOT NULL,
   `id_marca` int
@@ -257,7 +257,7 @@ CREATE TABLE `venta`
   `cliente` varchar
 (50) NOT NULL,
   `total` decimal
-  (9,2) NOT NULL,
+  (12,2) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp
 () ON
 UPDATE current_timestamp()
