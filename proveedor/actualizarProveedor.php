@@ -19,7 +19,7 @@
         if ($actualizar) {
             session_start();
             $_SESSION['actualizar'] = 'registro';
-            header("location: ../admin/provedor.php");
+            header("location: ../admin/proveedor.php");
         } else {
             echo "<h2> Error al Actualizar <h2>";
         }
