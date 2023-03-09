@@ -39,6 +39,9 @@
                                 <?php
                                 }
                             ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./login-registro.php">Carrito</a> 
+                            </li>
                             </div> 
                             </div>
                     </ul>

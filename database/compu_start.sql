@@ -85,7 +85,7 @@ CREATE TABLE detalle_venta(
     id_venta INT(11) NOT NULL,
     id_producto INT(11) NOT NULL,
     cantidad_venta INT(11) NOT NULL,
-    precio_producto FLOAT(12,2) NOT NULL,
+    precio_producto  FLOAT(12,2),
     monto_total FLOAT(12,2) NOT NULL
 );
 
@@ -144,8 +144,7 @@ INSERT INTO marca (marca) VALUES
 
 INSERT INTO categoria (categoria) VALUES
 ('Memorias RAM'),
-('Perifericos'),
-('Portatiles');
+('Perifericos');
 
 INSERT INTO producto (serial, producto, descripcion, cantidad, precio, id_categoria, id_marca) VALUES
 ('A123456789', 'Monitor LG de 27 pulgadas', 'Pantalla led de 27\".\r\nTiene una resolución de 1920px-1080px.\r\nRelación de aspecto de 16:9.\r\nPanel IPS.\r\nSu brillo es de 250cd/m².\r\nTipos de conexión: 2 HDMI 1.4, DisplayPort 1.2, VGA, Jack 3.5 mm.\r\nEs giratorio y reclinable.\r\nComodidad visual en todo momento.', 35, '20', 2, 3),

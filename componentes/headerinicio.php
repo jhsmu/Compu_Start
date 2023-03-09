@@ -24,8 +24,9 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Categorías
-                    </a>
+                                Categorías
+                            </a>
+                        
                             <div class="transparente">
                             <div class="dropdown-menu">
                             <?php
@@ -39,8 +40,13 @@
                                 <?php
                                 }
                             ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Carro/mostrarCarrito.php">Carrito(<?php echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']); ?>)</a> 
+                            </li>
                             </div> 
                             </div>
+                            
     
                     </ul>
 
