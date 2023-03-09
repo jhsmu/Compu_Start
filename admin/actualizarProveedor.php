@@ -116,7 +116,7 @@ $connection = $db->connect(); //Creamos la conexión a la BD
                 </div>
                 <div class="mt-5">
                     <button class='bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'> Actualizar</button>
-                    <button class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'> <a href="./provedor.php">Volver</a>
+                    <button class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'> <a href="./proveedor.php">Volver</a>
                         
                     </button>
                 </div>
