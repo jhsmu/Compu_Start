@@ -3,6 +3,7 @@ session_start();
     error_reporting( ~E_NOTICE ); // avoid notice
 	
     require_once './database/conexion.php';
+    include './Carro/carrito.php';
 
     if (isset($_GET['id'])) {
         $consulta=$DB_con->prepare('SELECT * FROM producto WHERE id_producto=:producto');
@@ -88,52 +89,39 @@ session_start();
         </div>
         <div class="col-md-8">
             <div class="card-body">
-              <h2 class="card-title" style="margin: 70px 10px ;" name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
-              <p name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></p>
+            <h2 class="card-title" style="margin: 70px 10px ;" name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
+              <h3 class="card-text"><?php echo 'Marca: '.$marca['marca'] ?></h3>
               <h3>Características</h3>
               <p class="card-text"><?php echo $producto['descripcion'] ?></p>
+              <h3 name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></h3>
                 <br>
-                <label for="int">Cantidad:</label>
-                <input type="int" id="cantidad">
-                <button type="submit" class="btn btn-success btn-lg">Comprar</button>
-                <button type="button" class="btn btn-outline-secondary"> <a href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
-                <br> <br> <br>
-                <h5><a href="#caracteristicas">Ver más características...</a> </h5>
+                <form action="" method="post">
+                    <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
+                    <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
+                    <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
+                    <div class="row">
 
-                <br> <br> <br> <br>
-
-                <section id="caracteristicas">
-                  <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item"> <b>Marca</b> </li>
-                    <li class="list-group-item"><?php echo $marca['marca'] ?></li>
-                    </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Modelo</b> </li>
-                    <li class="list-group-item">24B2XH</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Color</b> </li>
-                    <li class="list-group-item">Negro</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Voltaje</b></li>
-                    <li class="list-group-item">100V/240V</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Conexiones</b></li>
-                    <li class="list-group-item">HDMI 1.4, VGA/D-Sub, Jack 3.5 mm</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b> Resolución de la pantalla </b></li>
-                    <li class="list-group-item">1920 px x 1080 px</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b> Brillo</b></li>
-                    <li class="list-group-item">250 cd/m²</li>
-                  </ul>
-                </section>
-                    <p class="card-tex"> </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="row g-3">
+                      <div class="col-auto">
+                        <select class="form-select" aria-label="Default select example" name="cantidad">
+                          <option selected>Eliga la cantidad de productos</option>
+                          <?php
+                            for ($i=1; $i <= $producto['cantidad']; $i++) { 
+                          ?>
+                          <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                          <?php
+                            }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="col-auto">
+                        <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg">Comprar</button>
+                      </div>
+                      <div class="col-auto">
+                        <button type="button" class="btn btn-outline-secondary"> <a href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
+                      </div>
+                    </div>
+                </form>
             </div>
           </div>
 

@@ -88,51 +88,13 @@
         <div class="col-md-8">
             <div class="card-body">
               <h2 class="card-title" style="margin: 70px 10px ;" name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
-              <p name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></p>
+              <h3 class="card-text"><?php echo 'Marca: '.$marca['marca'] ?></h3>
               <h3>Características</h3>
               <p class="card-text"><?php echo $producto['descripcion'] ?></p>
+              <h3 name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></h3>
                 <br>
-                <label for="int">Cantidad:</label>
-                <input type="int" id="cantidad">
-                <button type="submit" class="btn btn-success btn-lg">Comprar</button>
+                <button type="submit" class="btn btn-outline-secondary btn-lg"><a href="./login-registro.php">Agregar al carrito</a></button>
                 <button type="button" class="btn btn-outline-secondary"> <a href="./paginaCategoria.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
-                <br> <br> <br>
-                <h5><a href="#caracteristicas">Ver más características...</a> </h5>
-
-                <br> <br> <br> <br>
-
-                <section id="caracteristicas">
-                  <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item"> <b>Marca</b> </li>
-                    <li class="list-group-item"><?php echo $marca['marca'] ?></li>
-                    </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Modelo</b> </li>
-                    <li class="list-group-item">24B2XH</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Color</b> </li>
-                    <li class="list-group-item">Negro</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Voltaje</b></li>
-                    <li class="list-group-item">100V/240V</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b>Conexiones</b></li>
-                    <li class="list-group-item">HDMI 1.4, VGA/D-Sub, Jack 3.5 mm</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b> Resolución de la pantalla </b></li>
-                    <li class="list-group-item">1920 px x 1080 px</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal-sm">
-                    <li class="list-group-item"> <b> Brillo</b></li>
-                    <li class="list-group-item">250 cd/m²</li>
-                  </ul>
-                </section>
-                    <p class="card-tex"> </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
 
