@@ -32,6 +32,7 @@ session_start();
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Compu Start</title>
@@ -40,12 +41,9 @@ session_start();
 <header>
   <?php include(("./componentes/headerinicio.php")); ?>
 </header>
-
-<br> <br>
-<h2><?php echo $categoria['categoria'] ?></h2>
-<br> <br>
-    
     <div class="container">
+    <h2  class="cate mt-0"><?php echo $categoria['categoria'] ?></h2>
+<br> <br>
         <div class="row ">
  <!-- card 1 -->
       <?php
@@ -111,15 +109,6 @@ session_start();
         ?>
         </div>
     </div>
-
-    <!--  
-    
-    
-    
-    
-    -->
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>

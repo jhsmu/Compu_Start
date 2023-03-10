@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,7 @@
 <body>
   <!-- encabezado -->
 <header>
-    <?php include("./componentes/headerindex.php"); ?>
+    <?php include("./componentes/headerinicio.php"); ?>
     </header>
 
     <div class="container">

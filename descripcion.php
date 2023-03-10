@@ -27,11 +27,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- css bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- iconos en fontawesome -->
     <script src="https://kit.fontawesome.com/4b93f520b2.js" crossorigin="anonymous"></script>
     <!-- css foote y el header -->
@@ -39,6 +38,10 @@
     <!-- css cuerpo -->
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Compu_start</title>
 </head>
 <body>
@@ -92,14 +95,28 @@
               <h3>Características</h3>
               <p class="card-text"><?php echo $producto['descripcion'] ?></p>
               <h3 name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></h3>
-                <br>
-                <button type="submit" class="btn btn-outline-secondary btn-lg"><a href="./login-registro.php">Agregar al carrito</a></button>
-                <button type="button" class="btn btn-outline-secondary"> <a href="./paginaCategoria.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
+              <div class="row">
+                    <div class="col-3">
+                      <select class="form-select mb-3" aria-label="Default select example" style="width: 80%; height: 50px; border-radius: 10px;"  name="cantidad">
+                        <option selected>Eliga la cantidad de productos</option>
+                          <?php
+                            for ($i=1; $i <= $producto['cantidad']; $i++) { 
+                          ?>
+                          <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                          <?php
+                            }
+                          ?>
+                      </select>
+                    </div>
+                    <div class="col-2">
+                      <a type="button" class="btn btn-success btn-lg" href="./login-registro.php">Agregar</a>
+                    </div>
+                    <div class="col-2">
+                    <a type="button" class="btn btn-lg" style="background: #144272; color:#fff" href="./paginaCategoria.php?id=<?php echo $producto['id_categoria'] ?>";>Atrás</a>
+                    </div>
             </div>
           </div>
-
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>

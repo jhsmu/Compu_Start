@@ -41,6 +41,7 @@ session_start();
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Compu_start</title>
@@ -89,22 +90,20 @@ session_start();
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h2 class="card-title" style="margin: 70px 10px ;" name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
+              <h2 class="card-title" style="margin: 70px 10px ;" name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
               <h3 class="card-text"><?php echo 'Marca: '.$marca['marca'] ?></h3>
               <h3>Características</h3>
               <p class="card-text"><?php echo $producto['descripcion'] ?></p>
               <h3 name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></h3>
                 <br>
                 <form action="" method="post">
-                    <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
-                    <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
-                    <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
-                    <div class="row">
-
-                    <div class="row g-3">
-                      <div class="col-auto">
-                        <select class="form-select" aria-label="Default select example" name="cantidad">
-                          <option selected>Eliga la cantidad de productos</option>
+                  <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
+                  <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
+                  <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
+                  <div class="row">
+                    <div class="col-3">
+                      <select class="form-select mb-3" aria-label="Default select example" style="width: 80%; height: 50px; border-radius: 10px;"  name="cantidad">
+                        <option selected>Eliga la cantidad de productos</option>
                           <?php
                             for ($i=1; $i <= $producto['cantidad']; $i++) { 
                           ?>
@@ -112,15 +111,15 @@ session_start();
                           <?php
                             }
                           ?>
-                        </select>
-                      </div>
-                      <div class="col-auto">
-                        <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg">Comprar</button>
-                      </div>
-                      <div class="col-auto">
-                        <button type="button" class="btn btn-outline-secondary"> <a href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>"> Atrás</a></button>
-                      </div>
+                      </select>
                     </div>
+                    <div class="col-2">
+                      <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg">Agregar</button>
+                    </div>
+                    <div class="col-2">
+                      <a type="submit" class="btn btn-lg" style="background: #144272; color:#fff" href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>";>Atras</a>
+                    </div>
+                  </div>
                 </form>
             </div>
           </div>
