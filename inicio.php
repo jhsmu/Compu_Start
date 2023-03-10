@@ -1,5 +1,16 @@
 <?php
-session_start();
+    session_start();
+
+    require_once './database/conexion.php';
+
+    $consulta1=$DB_con->prepare('SELECT * FROM producto ORDER BY id_producto DESC'); 
+    $consulta1->execute();
+    $productos=$consulta1->fetchAll(PDO::FETCH_ASSOC);
+
+    $consulta2=$DB_con->prepare('SELECT * FROM imagenes');
+    $consulta2->execute();
+    $imagenes=$consulta2->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +31,7 @@ session_start();
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Compu_start</title>
 </head>
 
@@ -33,44 +45,47 @@ session_start();
 <div class="container ">
         <div class="row mt-4 mb-4">
             <!-- card 1 -->
+            <!-- Este foreach es para iterar y traer los productos de la base de datos -->
+            <?php
+                $ayudante=$productos[0]['id_producto'];
+                $numero=1;
+                foreach ($productos as $key => $producto) {
+            ?>
             <div class="col-md-4">
                 <div class="card">
                     <figure>
-                    <img src="./img/inicio/monitor gamers asus.jpg" height="200px" class="card-img-top" alt="...">
+
+                    <?php //Este script sirve para poner solo la primera imagen
+                        foreach ($imagenes as $key => $imagen) {
+                            if(($producto['id_producto']==$imagen['producto_id'])and($producto['id_producto']==$ayudante)){
+                                $ayudante--;
+                    
+                    ?>
+                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                    
+                    <?php
+                            break;
+                            }
+                        }
+                    ?>
+                    
                     </figure>
                     <div class="card-body">
-                        <h5 class="card-title">Monitor Gamer Asus ROG Swift Pro PG248QP</h5>
-                        <p class="card-text text-justify" >El Asus ROG Swift OLED PG248QP es un monitor totalmente localizado para el público ‘gamer’. Cuenta con un panel TN de 24,1 pulgadas, una resolución de 1080p.</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
                     </div>
                 </div>
             </div>
-            <!-- card 2 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <figure>
-                    <img src="./img/inicio/combo teclado + mouse gamer.jpg" height="200px" class="card-img-top" alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Combo Teclado + Mouse Gamers</h5>
-                        <p class="text-justify">Combo Teclado+Mouse KY-MK07+KY-M986 JANUS Gamer mecanico Cuatro veces más rápido que los teclados estándar Cada tecla está optimizada para mejorar la experiencia táctil y ofrecer una respuesta superrápida. </p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 3 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <figure>
-                    <img src="./img/inicio/memoria ram spectrix D60G.png" height="200px" class="card-img-top" alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Memoria Ram Spectrix</h5>
-                        <p class="card-text text-md-justify">ADATA MEMORIA DDR4 XPG SPECTRIX D60, Es RGB de 8GB a 3000Mhz, este módulo D60 está fabricado con chips de alta calidad y un disipador de calor metálico que proporciona una integridad, confiabilidad y estabilidad de la señal excelentes</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
+
+            <?php
+                    if ($numero%3==0) {
+                        break;
+                    }else {
+                        $numero++; 
+                    }
+                }
+            ?>
+
             <!-- carusel -->
             <div id="carouselExampleAutoplaying" class="carousel slide mt-3 mb-3" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -94,44 +109,40 @@ session_start();
           </button>
             </div>
             <!-- card 4 -->
+
+            <?php
+                for ($i=3; $i < 6; $i++) { 
+            ?>
             <div class="col-md-4">
                 <div class="card">
                     <figure>
-                    <img src="./img/inicio/Tarjeta-Grafica-ASUS-TUF-RTX-3070-Ti-OC16572985441.png" height="200px" class="card-img-top" alt="...">
+
+                    <?php //Este script sirve para poner solo la primera imagen
+                        foreach ($imagenes as $key => $imagen) {
+                            if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
+                                $ayudante--;
+                    
+                    ?>
+
+                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                    
+                    <?php
+                            break;
+                            }
+                        }
+                    ?>
+                
                     </figure>
                     <div class="card-body">
-                        <h5 class="card-title">Tarjeta Grafica Asus Rtx 3070</h5>
-                        <p class="card-text">Los componentes básicos de las GPU más rápidas y eficientes del mundo, el nuevo Ampere SM ofrece el doble de rendimiento de FP32 y una eficiencia energética mejorada.</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
                     </div>
                 </div>
             </div>
-            <!-- card 5 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <figure>
-                    <img src="./img/inicio/ryzen5 5600X.jpg" height="200px" class="card-img-top" alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Procesador ryazen5 5600</h5>
-                        <p class="card-text">El AMD Ryzen 5 5600X es un procesador de la serie 5000 que dispone de 6 núcleos y 12 subprocesos para que disfrutes de un rendimiento sensacional en un amplio catálogo de juegos y aplicaciones.</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 6 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <figure>
-                    <img src="./img/inicio/msi z490 A pro.jpg" height="200px" class="card-img-top" alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Placa madre msi Z490</h5>
-                        <p class="card-text">La Serie PRO ayuda a los usuarios a trabajar de manera más inteligente al ofrecer una experiencia eficiente y productiva. Con una funcionalidad estable y la construcción de alta calidad.</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
+
         </div>
 </div>
 
@@ -154,47 +165,40 @@ session_start();
             </div>
             </div>
     <div class="row mt-4 mb-4">
-                    <!-- card 1.1 -->
-                    <div class="col-md-4">
-                <div class="card">
-                    <figure>
-                    <img src="./img/inicio/discoduro interno para laptop.jpg" height="200px" class="card-img-top" alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Disco duro interno para laptop</h5>
-                        <p class="card-text">Disco duro Interno para Laptop 2.5 Seagate 500 GB ST500LT030 interno,2.5″, SATA 3, 5400 rpm y 128MB</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
-            <!-- card 1.2 -->
+
+
+            <?php
+                for ($i=6; $i <9; $i++) { 
+            ?>
             <div class="col-md-4">
                 <div class="card">
                     <figure>
-                    <img src="./img/inicio/m2 ssd.webp" height="200px" class="card-img-top" alt="...">
+
+                    <?php //Este script sirve para poner solo la primera imagen
+                        foreach ($imagenes as $key => $imagen) {
+                            if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
+                                $ayudante--;
+                    
+                    ?>
+
+                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                    
+                    <?php
+                            break;
+                            }
+                        }
+                    ?>
+                
                     </figure>
                     <div class="card-body">
-                        <h5 class="card-title">SSD M.2 WD Green 2280</h5>
-                        <p class="card-text" style="text-align:justify">La SSD M.2 WD Green 2280 cuenta con almacenamiento mejorado para sus necesidades diarias de computación.</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
+                        <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
                     </div>
                 </div>
             </div>
-            <!-- card 1.3 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <figure>
-                    <img src="./img/inicio/disipador de calor de aluminio.jpg" height="200px" class="card-img-top" alt="...">
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title">Disipador de calor</h5>
-                        <p class="card-text">Enfriador de CPU de computadora de aluminio de 9 cm Ventilador de refrigeración Disipador de 500 RPM á para LAG 1366 Rojo.
-                            
-</p>
-                        <a href="#" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            ?>
     </div>
     <section class=" mb-3">
         <img src="./img/scroll/gabinete1.jpg" alt="">
@@ -221,10 +225,64 @@ session_start();
         <span style="--i:8"><img src="./img/pruebas/8.jpg" alt=""></span>
     </div>
     </div>
+
+    <div class="row mt-4 mb-4">
+
+
+            <?php
+                for ($i=9; $i <$productos[0]['id_producto']; $i++) { 
+            ?>
+            <div class="col-md-4">
+                <div class="card">
+                    <figure>
+
+                    <?php //Este script sirve para poner solo la primera imagen
+                        foreach ($imagenes as $key => $imagen) {
+                            if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
+                                $ayudante--;
+                    
+                    ?>
+
+                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                    
+                    <?php
+                            break;
+                            }
+                        }
+                    ?>
+                
+                    </figure>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
+            </div>
+            <?php
+                }
+            ?>
+
+
 <!-- Pie de pagina -->
         <footer>
         <?php include("./componentes/footer.php")?>
         </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+
+<?php
+    
+    if ($_SESSION['compra']==true) {
+        echo '<script>Swal.fire({
+            title: "Compra exitosa",
+            text: "Tus productos han sido comprados",
+            icon: "success" 
+            });
+            </script>';
+        $_SESSION['compra']=false;
+    }
+?>
 
 
 </body>
