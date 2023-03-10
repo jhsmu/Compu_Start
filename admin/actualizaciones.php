@@ -70,13 +70,14 @@ session_start();
                         </div>
                         <div class="mb-2 mx-2 border-solid border-gray-300  rounded border shadow-sm w-full md:w-1/2 lg:w-1/2">
                             <div class="bg-gray-200 px-2 py-3 border-solid border-gray-300 border-b">
-                                Agregar Imagen
+                                Marca
                             </div>
                             <div class="p-3">
-                                <input 
-                                    class="modal-trigger bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="file">
+                                <button data-modal='centeredFormModal1'
+                                    class="modal-trigger bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Agregar Marca
+                                </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -152,18 +153,64 @@ session_start();
     </div>
 </div>
 
+<div id='centeredFormModal1' class="modal-wrapper">
+    <div class="overlay close-modal"></div>
+    <div class="modal modal-centered">
+        <div class="modal-content shadow-lg p-5">
+            <div class="border-b p-2 pb-3 pt-0 mb-4">
+               <div class="flex justify-between items-center">
+                    Agregar Marca
+                    <span class='close-modal cursor-pointer px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200'>
+                        <i class="fas fa-times text-gray-700"></i>
+                    </span>
+               </div>
+            </div>
+            <!-- Modal content -->
+            <form class="w-full" action="../marca/agregarmarca.php" method="post">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                            >
+                            Marca
+                        </label>
+                        <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                        name="marca" id="marca" type="text" placeholder="Ingrese la marca">
+                    </div>
+                    
+                <div class="mt-5">
+                    <button class='bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'> Agregar</button>
+                    <span class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'>
+                        Close
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="../js/main.js"></script>
 
 </body>
 
 </html>
 <?php
+
 if(isset($_SESSION['proveedor'])){
     echo "<script>
     Swal.fire({
         icon: 'success',
         title: 'Éxito',
         text: 'Proveedor agregado'
+        });
+    </script>";
+session_destroy();
+}
+
+if(isset($_SESSION['marca'])){
+    echo "<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: 'Marca agregada'
         });
     </script>";
 session_destroy();

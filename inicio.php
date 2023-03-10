@@ -10,13 +10,14 @@
     $consulta2=$DB_con->prepare('SELECT * FROM imagenes');
     $consulta2->execute();
     $imagenes=$consulta2->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css bootstrap -->
@@ -28,10 +29,6 @@
     <!-- css cuerpo -->
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Compu_start</title>
 </head>
 
@@ -51,24 +48,21 @@
                 $numero=1;
                 foreach ($productos as $key => $producto) {
             ?>
+
             <div class="col-md-4">
                 <div class="card">
                     <figure>
-
-                    <?php //Este script sirve para poner solo la primera imagen
-                        foreach ($imagenes as $key => $imagen) {
-                            if(($producto['id_producto']==$imagen['producto_id'])and($producto['id_producto']==$ayudante)){
-                                $ayudante--;
-                    
-                    ?>
-                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
-                    
-                    <?php
-                            break;
+                        <?php //Este script sirve para poner solo la primera imagen
+                            foreach ($imagenes as $key => $imagen) {
+                                if(($producto['id_producto']==$imagen['producto_id'])and($producto['id_producto']==$ayudante)){
+                                    $ayudante--;
+                        ?>
+                        <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                        <?php
+                                break;
+                                }
                             }
-                        }
-                    ?>
-                    
+                        ?>
                     </figure>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
@@ -100,38 +94,34 @@
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <!-- card 4 -->
 
+            <!-- card 3 -->
             <?php
                 for ($i=3; $i < 6; $i++) { 
             ?>
+
             <div class="col-md-4">
                 <div class="card">
                     <figure>
-
-                    <?php //Este script sirve para poner solo la primera imagen
-                        foreach ($imagenes as $key => $imagen) {
-                            if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
-                                $ayudante--;
-                    
-                    ?>
-
-                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
-                    
-                    <?php
-                            break;
+                        <?php //Este script sirve para poner solo la primera imagen
+                            foreach ($imagenes as $key => $imagen) {
+                                if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
+                                    $ayudante--;
+                        ?>
+                        <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                        <?php
+                                break;
+                                }
                             }
-                        }
-                    ?>
-                
+                        ?>
                     </figure>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
@@ -139,56 +129,53 @@
                     </div>
                 </div>
             </div>
+
             <?php
                 }
             ?>
-
         </div>
 </div>
 
 <div class="container">
-              <!-- barra con animacion -->
+            <!-- barra con animacion -->
             <div class="color">
-            <div class="loader">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            </div>
+</div>
+
+<div class="container ">
     <div class="row mt-4 mb-4">
-
-
             <?php
                 for ($i=6; $i <9; $i++) { 
             ?>
+
             <div class="col-md-4">
                 <div class="card">
                     <figure>
-
-                    <?php //Este script sirve para poner solo la primera imagen
-                        foreach ($imagenes as $key => $imagen) {
-                            if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
-                                $ayudante--;
-                    
-                    ?>
-
-                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
-                    
-                    <?php
-                            break;
+                        <?php //Este script sirve para poner solo la primera imagen
+                            foreach ($imagenes as $key => $imagen) {
+                                if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
+                                    $ayudante--;
+                        ?>
+                        <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
+                        <?php
+                                break;
+                                }
                             }
-                        }
-                    ?>
-                
+                        ?>
                     </figure>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
@@ -200,6 +187,9 @@
                 }
             ?>
     </div>
+</div>
+
+<div class="container ">
     <section class=" mb-3">
         <img src="./img/scroll/gabinete1.jpg" alt="">
         <img src="./img/scroll/gabinete2.jpg"alt="">
@@ -210,58 +200,22 @@
         <img src="./img/scroll/gabinete7.jpg" alt="">
         <img src="./img/scroll/gabinete8.jpg" alt="">
     </section>
-
-
 </div>
-<div class="fondo">
-    <div class="slider">
-        <span style="--i:1"><img src="./img/pruebas/1.jpg" alt=""></span>
-        <span style="--i:2"><img src="./img/pruebas/2.jpg" alt=""></span>
-        <span style="--i:3"><img src="./img/pruebas/3.webp" alt=""></span>
-        <span style="--i:4"><img src="./img/pruebas/4.jpg" alt=""></span>
-        <span style="--i:5"><img src="./img/pruebas/5.jpg" alt=""></span>
-        <span style="--i:6"><img src="./img/pruebas/6.jpg" alt=""></span>
-        <span style="--i:7"><img src="./img/pruebas/7.jpg" alt=""></span>
-        <span style="--i:8"><img src="./img/pruebas/8.jpg" alt=""></span>
+
+<div class="container ">
+    <div class="fondo">
+        <div class="slider">
+            <span style="--i:1"><img src="./img/pruebas/1.jpg" alt=""></span>
+            <span style="--i:2"><img src="./img/pruebas/2.jpg" alt=""></span>
+            <span style="--i:3"><img src="./img/pruebas/3.webp" alt=""></span>
+            <span style="--i:4"><img src="./img/pruebas/4.jpg" alt=""></span>
+            <span style="--i:5"><img src="./img/pruebas/5.jpg" alt=""></span>
+            <span style="--i:6"><img src="./img/pruebas/6.jpg" alt=""></span>
+            <span style="--i:7"><img src="./img/pruebas/7.jpg" alt=""></span>
+            <span style="--i:8"><img src="./img/pruebas/8.jpg" alt=""></span>
+        </div>
     </div>
-    </div>
-
-    <div class="row mt-4 mb-4">
-
-
-            <?php
-                for ($i=9; $i <$productos[0]['id_producto']; $i++) { 
-            ?>
-            <div class="col-md-4">
-                <div class="card">
-                    <figure>
-
-                    <?php //Este script sirve para poner solo la primera imagen
-                        foreach ($imagenes as $key => $imagen) {
-                            if(($productos[$i]['id_producto']==$imagen['producto_id'])and($productos[$i]['id_producto']==$ayudante)){
-                                $ayudante--;
-                    
-                    ?>
-
-                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="200px" class="card-img-top" alt="...">
-                    
-                    <?php
-                            break;
-                            }
-                        }
-                    ?>
-                
-                    </figure>
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
-                        <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
-                    </div>
-                </div>
-            </div>
-            <?php
-                }
-            ?>
-
+</div>
 
 <!-- Pie de pagina -->
         <footer>
@@ -272,19 +226,18 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
 
 <?php
-    
-    if ($_SESSION['compra']==true) {
-        echo '<script>Swal.fire({
-            title: "Compra exitosa",
-            text: "Tus productos han sido comprados",
-            icon: "success" 
-            });
-            </script>';
-        $_SESSION['compra']=false;
+    if(isset($_SESSION['compra'])){
+        if ($_SESSION['compra']==true) {
+            echo '<script>Swal.fire({
+                title: "Compra exitosa",
+                text: "Tus productos han sido comprados",
+                icon: "success" 
+                });
+                </script>';
+            $_SESSION['compra']=false;
+        }
     }
 ?>
-
-
 </body>
 
 </html>
