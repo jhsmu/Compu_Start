@@ -6,27 +6,27 @@ CREATE DATABASE compu_start;
 
 CREATE TABLE cliente(
     id INT(11) PRIMARY KEY AUTO_INCREMENT,
-    imagen VARCHAR(80) NULL,
-    nombre VARCHAR(60) NOT NULL,
+    imagen VARCHAR(50) NULL,
+    nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
     direccion VARCHAR(60) NOT NULL,
-    telefono INT(15) NOT NULL,
-    email VARCHAR(80) NOT NULL,
-    contrasenia VARCHAR(100) NOT NULL
+    telefono INT(50) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    contrasenia VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE administrador(
     id_administrador INT(11) PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(60) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
-    email VARCHAR(80) NOT NULL,
-    contrasenia VARCHAR(100) NOT NULL
+    email VARCHAR(60) NOT NULL,
+    contrasenia VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE producto(
     id_producto INT(11) PRIMARY KEY AUTO_INCREMENT,
     serial VARCHAR(12) NOT NULL,
-    producto VARCHAR(60) NOT NULL,
+    producto VARCHAR(50) NOT NULL,
     descripcion TEXT NOT NULL,
     cantidad INT(11) NOT NULL,
     precio FLOAT(12,2),
@@ -37,7 +37,7 @@ CREATE TABLE producto(
 CREATE TABLE proveedor(
     id_proveedor INT(11) PRIMARY KEY AUTO_INCREMENT,
     proveedor VARCHAR(50) NOT NULL,
-    correo VARCHAR(45) NOT NULL,
+    correo VARCHAR(60) NOT NULL,
     direccion_web VARCHAR(60) NOT NULL,
     direccion VARCHAR(60) NOT NULL
 );
@@ -45,17 +45,17 @@ CREATE TABLE proveedor(
 CREATE TABLE imagenes(
     id_imagenes INT(11) PRIMARY KEY AUTO_INCREMENT,
     producto_id INT(11)NOT NULL,
-    url VARCHAR(80) NULL
+    url VARCHAR(50) NULL
 );
 
 CREATE TABLE categoria(
     id_categoria INT(11) PRIMARY KEY AUTO_INCREMENT,
-    categoria VARCHAR(45) NOT NULL
+    categoria VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE marca(
     id_marca INT(11) PRIMARY KEY AUTO_INCREMENT,
-    marca VARCHAR(45) NOT NULL
+    marca VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE compra(
