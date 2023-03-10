@@ -44,6 +44,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Compu_start</title>
 </head>
 <body>
@@ -100,11 +101,11 @@ session_start();
                      <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
                     <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
                     <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
-                    <input type="number" name="" id="cantidad_referencia" value="<?php echo $producto['cantidad'] ?>" hidden>
+                    <input type="number" name="" id="cantidadRef" value="<?php echo $producto['cantidad'] ?>">
                   <div class="row">
                     <div class="row g-3">
                       <div class="col-auto">
-                        <input type="number" name="cantidad" id="cantidad" onchange="cantidad()">
+                        <input type="number" name="cantidad" id="cantidadUsu" onchange="cantidad123()">
                       </div>
 
                       <?php
@@ -142,25 +143,19 @@ session_start();
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 	<script>
-	      function cantidad() {
-		unidades=document.getElementById('cantidad_referencia').value;
-		unidades_requeridas=document.getElementById('cantidad').value;
-
-		if (unidades_requeridas>unidades){
-		  Swal.fire({
-		    title: "Advertencia:",
-		    text: "No puede superar el limite de productos",
-		    icon: "error" 
-		    });
-
-		    document.getElementById('cantidad').value="";
-		}
-	      }
-
-
+	  function cantidad123() {
+      if (document.getElementById("cantidadUsu").value > document.getElementById("cantidadRef").value){
+        document.getElementById('cantidadUsu').value="";
+        Swal.fire({
+        title: "Advertencia:",
+        text: "No puede superar el limite de productos",
+        icon: "error", 
+        });
+      }
+    }
 	</script>
 
 </body>
