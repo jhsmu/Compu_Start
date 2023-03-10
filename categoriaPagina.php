@@ -13,6 +13,10 @@ session_start();
     $consulta2->bindParam(':categoria', $_GET['id']);
     $consulta2->execute();
     $productos=$consulta2->fetchAll(PDO::FETCH_ASSOC);
+
+    $consulta3=$DB_con->prepare('SELECT * FROM imagenes');
+    $consulta3->execute();
+    $imagenes=$consulta3->fetchAll(PDO::FETCH_ASSOC);
   }  
 ?>
 
@@ -32,7 +36,6 @@ session_start();
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Compu Start</title>
@@ -41,18 +44,34 @@ session_start();
 <header>
   <?php include(("./componentes/headerinicio.php")); ?>
 </header>
-    <div class="container">
-    <h2  class="cate mt-0"><?php echo $categoria['categoria'] ?></h2>
+
 <br> <br>
+<h2><?php echo $categoria['categoria'] ?></h2>
+<br> <br>
+    
+    <div class="container">
         <div class="row ">
  <!-- card 1 -->
       <?php
+          $ayudante=0;
           foreach ($productos as $key => $producto) {
             if($key<3){
       ?>
             <div class="col-md-4 mt-md-4 mb-md-4">
                 <div class="card">
-                    <img src="./imagenes/memoria1.jpg"  height="250px" width="300px" alt="memoriaRAM4gb">
+                  <?php
+                    foreach ($imagenes as $key => $imagen) {
+                        if(($producto['id_producto']==$imagen['producto_id'])and($producto['id_producto']!=$ayudante)){
+                          $ayudante++;
+                  ?>
+                    <img src="./imagenes/<?php echo $imagen['url'] ?>"  height="250px" width="300px" alt="memoriaRAM4gb">
+
+                  <?php
+                        break;
+                        }
+                        
+                      }
+                  ?>
                     <div class="card-body">
                       <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
                       <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver más</a>
@@ -94,7 +113,20 @@ session_start();
         ?>
             <div class="col-md-4 mt-md-4">
                 <div class="card">
-                    <img src="./imagenes/memoria6.webp" height="350px" width="300px" alt="memoriaRAM4gb1Samsung">
+
+                  <?php
+                    foreach ($imagenes as $key => $imagen) {
+                        if(($producto['id_producto']==$imagen['producto_id'])and($producto['id_producto']!=$ayudante)){
+                          $ayudante++;
+                  ?>
+                    <img src="./imagenes/<?php echo $imagen['url'] ?>" height="350px" width="300px" alt="memoriaRAM4gb1Samsung">
+                    
+                  <?php
+                          break;
+                        }
+                      }
+                  ?>
+                    
                     <div class="card-body">
                       <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
                       <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver más</a>
