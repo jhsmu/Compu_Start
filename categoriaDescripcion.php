@@ -100,7 +100,7 @@ session_start();
                      <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
                     <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
                     <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
-                    <input type="number" name="" id="cantidad_referencia" value="<?php echo $producto['cantidad'] ?>">
+                    <input type="number" name="" id="cantidad_referencia" value="<?php echo $producto['cantidad'] ?>" hidden>
                   <div class="row">
                     <div class="row g-3">
                       <div class="col-auto">
@@ -114,13 +114,25 @@ session_start();
                       <div class="col-auto">
                         <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg" disabled>Comprar</button>
                       </div>
+                      <div class="col-2">
+                        <a type="submit" class="btn btn-lg" style="background: #144272; color:#fff" href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>";>Atras</a>
+                      </div>
 
                       <?php
                         } else {
                       ?>
-                    </div>
-                    <div class="col-2">
-                      <a type="submit" class="btn btn-lg" style="background: #144272; color:#fff" href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>";>Atras</a>
+
+                      <div class="col-auto">
+                        <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg">Comprar</button>
+                      </div>
+                      <div class="col-2">
+                        <a type="submit" class="btn btn-lg" style="background: #144272; color:#fff" href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>";>Atras</a>
+                      </div>
+
+                      <?php
+                        }
+                      ?>
+
                     </div>
                   </div>
                 </form>
@@ -147,6 +159,7 @@ session_start();
 		    document.getElementById('cantidad').value="";
 		}
 	      }
+
 
 	</script>
 
