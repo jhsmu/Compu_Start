@@ -25,10 +25,23 @@
             $insertar->bindParam(':precio', $producto['precio']);
             $insertar->bindParam(':total', $total_producto);
             $insertar->execute();
-        } 
-        session_destroy();
 
-        header("location:../index.php");
+            $consulta=$DB_con->prepare('SELECT * FROM producto WHERE id_producto=:id');
+            $consulta->bindParam(':id', $producto['id']);
+            $consulta->execute();
+
+            $cantidad=$consulta->fetch(PDO::FETCH_ASSOC);
+
+            $sustraccion=$cantidad['cantidad']-$producto['cantidad'];
+
+            $resto=$DB_con->prepare('UPDATE producto SET cantidad=:cantidad WHERE id_producto=:id');
+            $resto->bindParam(':cantidad', $sustraccion);
+            $resto->bindParam(':id', $producto['id']);
+            $resto->execute();
+        } 
+        unset($_SESSION['carrito']);
+        $_SESSION['compra']=true;
+        header("location:../inicio.php");
 
 
         //current_timestamp()
