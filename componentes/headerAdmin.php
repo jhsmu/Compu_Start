@@ -6,7 +6,7 @@
                     <h1 class="text-white p-2">Compu Start</h1>
                 </div>
                 <div class="p-1 flex flex-row items-center">
-                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
+                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block"><?php echo $_SESSION["admin"] ?></a>
                     <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="../img/logo/avatar.png" alt="">
                     <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
                         <ul class="list-reset">
