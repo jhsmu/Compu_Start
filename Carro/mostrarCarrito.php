@@ -1,0 +1,93 @@
+<?php
+    include './carrito.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>Carrito</h1>
+        <a href="../inicio.php">Volver</a>
+    </header>
+
+    <h2>Lista de compra</h2>
+
+    <table class="table table-light table-bordered">
+        <tbody>
+            <tr>
+                <th width="40%">Producto</th>
+                <th width="15%" class="text-center">Precio</th>
+                <th width="20%" class="text-center">Cantidad</th>
+                <th width="20%" class="text-center">Total</th>
+                <th width="5%">--</th>
+            </tr>
+            <?php
+            if(!empty($_SESSION['carrito'])){ 
+                $total=0;
+                foreach ($_SESSION['carrito'] as $indice => $producto) {
+            ?>
+            <tr>
+                <td width="40%"><?php echo $producto['producto'] ?></td>
+                <td width="15%" class="text-center"><?php echo number_format($producto['precio'],2) ?></td>
+                <td width="20%" class="text-center"><?php echo $producto['cantidad'] ?></td>
+                <td width="20%" class="text-center"><?php echo number_format($producto['precio']*$producto['cantidad'],2) ?></td>
+                <td width="5%">
+                    <form action="" method="post">
+                        <input type="text" name="id" value="<?php echo $producto['id']; ?>" hidden>
+                        <button class="btn btn-danger" type="submit" name="botonAdd" value="eliminar">
+                            Eliminar
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <?php
+                $total+=$producto['precio']*$producto['cantidad'];
+                }
+            ?>
+            <tr>
+                <td colspan="3" align="right"><h3>Total</h3></td>
+                <td align="right"><h3>$<?php echo number_format($total,2); ?></h3></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+
+                    <form action="./pagar.php" method="post">
+                        <div class="alert alert-success">
+                            <div class="form-group">
+                                <label for="persona">Cliente</label>
+                                <input type="text" name="cliente" id="cliente" class="form-control" value="<?php echo $_SESSION['usuario']; ?>" disabled>
+                            </div>
+                            <small class="form-text text-muted">
+                                Los productos se le venderan a este cliente
+                            </small>
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="botonAdd" value="proceder">Comprar</button>
+                    </form>
+
+                </td>
+            </tr>
+            <?php
+                } else {
+                    ?>
+                    <tr>
+                        <td colspan="5">
+                            <div class="alert alert-success">
+                                No hay productos en el carrito
+                            </div> 
+                        </td>
+                    </tr>
+                    
+                    <?php
+                        }
+                    ?>
+        </tbody>
+    </table>
+</body>
+</html>
