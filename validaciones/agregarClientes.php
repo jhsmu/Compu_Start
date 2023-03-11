@@ -67,7 +67,7 @@ if (isset($_POST["crear"])) {
             if (preg_match('`[a-z]`', $_POST["clave"])) {
                 if (preg_match('`[A-Z]`', $_POST["clave"])) {
                     if (preg_match('`[0-9]`', $_POST["clave"])) {
-                        $contrasena = md5(htmlentities($_POST["clave"]));
+                        $contrasena = (htmlentities($_POST["clave"]));
                     } else {
                         echo '<script>confirm("la clave debe tener al menos un número")</script>';
                         echo '<a href="../login-registro.php">Regresar al registro</a>';
