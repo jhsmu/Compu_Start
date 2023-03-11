@@ -16,6 +16,7 @@
 
         if ($email_i==$admin["email"] and $contra==$admin["contrasenia"]) {
             session_start();
+            $_SESSION["id_administrador"]=$admin["id_administrador"];
             $_SESSION["admin"]=$admin["nombre"];
             header('location:../admin/indexadmin.php');
         }else {
