@@ -38,6 +38,7 @@
     <!-- css cuerpo -->
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/aumento.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -97,16 +98,23 @@
               <h3 name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></h3>
               <div class="row">
                     <div class="col-3">
-                      <select class="form-select mb-3" aria-label="Default select example" style="width: 80%; height: 50px; border-radius: 10px;"  name="cantidad">
-                        <option selected>Eliga la cantidad de productos</option>
-                          <?php
-                            for ($i=1; $i <= $producto['cantidad']; $i++) { 
-                          ?>
-                          <option value="<?php echo $i ?>"><?php echo $i ?></option>
-                          <?php
-                            }
-                          ?>
-                      </select>
+
+                                      <div class="center">
+                          <div class="addNumber_cont">
+                              <button id="disabledBtn" onclick="addValueFunction(this)" value="decrease">
+                                  <
+                              </button>
+
+                              <div class="value_cont">
+                                  <h1 id="amount" value=""></h1>
+                              </div>
+
+                              <button onclick="addValueFunction(this)" value="increase">
+                                  >
+                              </button>
+
+                          </div>
+                      </div>
                     </div>
                     <div class="col-2">
                       <a type="button" class="btn btn-success btn-lg" href="./login-registro.php">Agregar</a>
@@ -119,5 +127,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./js/amunetar.js"></script>
 </body>
 </html>

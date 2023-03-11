@@ -101,11 +101,12 @@ session_start();
                      <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
                     <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
                     <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
-                    <input type="number" name="" id="cantidadRef" value="<?php echo $producto['cantidad'] ?>">
+                    <input type="number" name="cantidad" id="cantidadRef" value="<?php echo $producto['cantidad'] ?>" hidden>
+                    <p  name="" id="" style="color:gray;"><?php echo $producto['cantidad'] ?> Unidades disponibles</p>
                   <div class="row">
                     <div class="row g-3">
-                      <div class="col-auto">
-                        <input type="number" name="cantidad" id="cantidadUsu" onchange="cantidad123()">
+                      <div class="col-2">
+                        <input type="number" class="form-control" style="height:100%" name="cantidad" id="cantidadUsu" value="1" min="1" max="<?php echo $producto['cantidad'] ?>" onchange="cantidad123()">
                       </div>
 
                       <?php
