@@ -1,2 +1,2 @@
 # Compu_Start
-knfdañksnsfkdlafmblflds{ñdm
+POR FAVOR, NO SUBIR NADA HASTA QUE HABLEMOS
