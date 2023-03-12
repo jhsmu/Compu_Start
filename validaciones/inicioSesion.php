@@ -5,7 +5,7 @@
 
     if(isset($_POST["inicio"])){
         $email_i=$_POST["email"];
-        $contrasena=md5(htmlentities($_POST["clave_inicio"]));
+        $contrasena=(htmlentities($_POST["clave_inicio"]));
         $contra=htmlentities($_POST["clave_inicio"]);
 
         $consultar1=$DB_con->prepare('SELECT * FROM administrador WHERE email=:email');
