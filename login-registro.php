@@ -17,8 +17,8 @@ error_reporting(0);
     <link rel="stylesheet" href="./css/headerinicio.css">
     <script type='text/javascript' src=".\js\validaciones.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
-    <title>Login</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Login</title>
 </head>
 
 <body>
@@ -39,13 +39,13 @@ error_reporting(0);
                         <a href="" class="social"><i class="fab fa-twitter"></i></a>
                     </div>
                     <p>Digite todos los campos</p>
-                    <input autocomplete="on" onchange="nombre1()" type="text" name="nombre" id="nombre" placeholder="Nombres">
-                    <input autocomplete="on" onchange="apellido1()" type="text" name="apellido" id="apellido" placeholder="Apellidos">
-                    <input autocomplete="on" onchange="direccion1()" type="text" name="direccion" id="direccion" placeholder="Dirección">
-                    <input autocomplete="on" onchange="telefono1()" type="number" name="telefono" id="telefono" inputmode="tel" placeholder="Numero Telefonico">
-                    <input autocomplete="on" onchange="correo1()" type="email" name="email_registro" id="email_registro" placeholder="Correo">
-                    <input onchange="contraseña()" type="password" name="clave" id="clave" placeholder="Ingresar una clave clave mayor a 8 dígitos">
-                    <input onchange="verificarContraseña()" type="password" name="clave_c" id="clave_c" placeholder="Ingresar la clave nuevamente">
+                    <input autocomplete="on" onchange="nombre1()" type="text" name="nombre" id="nombre" placeholder="Nombres" required>
+                    <input autocomplete="on" onchange="apellido1()" type="text" name="apellido" id="apellido" placeholder="Apellidos" required>
+                    <input autocomplete="on" onchange="direccion1()" type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+                    <input autocomplete="on" onchange="telefono1()" type="number" name="telefono" id="telefono" inputmode="tel" placeholder="Numero Telefonico" required>
+                    <input autocomplete="on" onchange="ValidacionCorreo()" type="email" name="email_registro" id="correo" placeholder="Correo" required>
+                    <input onchange="contraseña()" type="password" name="clave" id="clave" placeholder="Ingresar una clave clave mayor a 8 dígitos" required>
+                    <input onchange="verificarContraseña()" type="password" name="clave_c" id="clave_c" placeholder="Ingresar la clave nuevamente" required>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                         <label class="form-check-label" for="flexCheckDefault">
@@ -123,6 +123,30 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js
         session_destroy();
     }
     ?>
+
+    <script>
+        function comprobar1() {
+            let nombre = document.getElementById("nombre").value;
+            let apellido = document.getElementById("apellido").value;
+            let direccion = document.getElementById("direccion").value;
+            let telefono = document.getElementById("telefono").value;
+            let correo = document.getElementById("email_registro").value;
+            let contraseña = document.getElementById("clave").value;
+            let contraseña_c = document.getElementById("clave_c").value;
+
+
+            if ((nombre == "") || (apellido == "") || (direccion == "") || (telefono == "") || (correo == "") || (contraseña == "") || (contraseña_c == "")) {
+                event.preventDefault();
+                Swal.fire({
+                    title: "Por favor",
+                    text: "llene el formulario completamente",
+                    icon: "error"
+                });
+            } else {
+                return
+            }
+        }
+    </script>
 </body>
 
 </html>

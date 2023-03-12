@@ -10,7 +10,7 @@ CREATE TABLE cliente(
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
     direccion VARCHAR(60) NOT NULL,
-    telefono INT(50) NOT NULL,
+    telefono INT(15) NOT NULL,
     email VARCHAR(60) NOT NULL,
     contrasenia VARCHAR(50) NOT NULL
 );

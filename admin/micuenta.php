@@ -116,13 +116,13 @@
             <div class="p-3">
     <form class="w-full" action="<?=$_SERVER["PHP_SELF"]?>" method="post">
 <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
+    <div class="w-full px-3" hidden>
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
                for="grid-password">
             Id Cliente
         </label>
         <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-        name="id" value="<?php echo $id_administrador; ?>" hidden>
+        name="id" value="<?php echo $id_administrador; ?>" >
     </div>
 </div>
 <div class="flex flex-wrap -mx-3 mb-6">
@@ -132,7 +132,7 @@
             Nombre(s)
         </label>
         <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-        type="text" name="nombre" value="<?php echo $nombre; ?>">
+        type="text" name="nombre" id="nombre" onchange="nombre1()" required value="<?php echo $nombre; ?>" placeholder="<?php echo $nombre; ?>">
     </div>
     <div class="w-full md:w-1/2 px-3">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
@@ -140,7 +140,7 @@
             Apellido(s)
         </label>
         <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-        type="text" name="apellido" value="<?php echo $apellido; ?>">
+        type="text" name="apellido" id="apellido" onchange="apellido1()" required value="<?php echo $apellido; ?>" placeholder="<?php echo $apellido; ?>">
     </div>
 </div>
 <div class="flex flex-wrap -mx-3 mb-6">
@@ -150,7 +150,7 @@
             Email
         </label>
         <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-        type="text" name="email" value="<?php echo $email; ?>">
+        type="text" name="email" id="correo" onchange="ValidacionCorreo()" required value="<?php echo $email; ?>" placeholder="<?php echo $email; ?>">
     </div>
     <div class="w-full md:w-1/2 px-3">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
@@ -158,14 +158,14 @@
             Contraseña
         </label>
         <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-        type="text" name="contrasena" value="<?php echo $contrasena; ?>">
+        type="password" name="contrasena" id="clave" onchange="contraseña()" required value="<?php echo $contrasena; ?>" >
     </div>
 
 </div>
 <div class="mt-5">
     <button class='bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'
     type="submit" name="enviar" value="ACTUALIZAR"> Actualizar</button>
-<button class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'> <a href="./indexAdmin.php">Volver</a>
+<button type="button" class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'> <a href="./indexAdmin.php">Volver</a>
         
     </button>
 </div>
@@ -184,6 +184,10 @@
 }
 ?>
 <script src="../js/main.js"></script>
+<!-- VALIDACIONES Y ALERTAS -->
+<script src="../js/validaciones.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+
 
 </body>
 

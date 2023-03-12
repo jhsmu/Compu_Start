@@ -53,47 +53,46 @@
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                                                   for="grid-first-name">
+                                                   for="serial">
                                                 Serial
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-                                                   id="grid-first-name" type="text" placeholder="Ingrese el serial">
+                                                   id="serial" type="text"  placeholder="Ingrese el serial">
                                         </div>
                                         <div class="w-full md:w-1/2 px-3">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
-                                                   for="grid-last-name">
+                                                   for="nombre">
                                                 Nombre del producto
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
-                                                   id="grid-last-name" type="text" placeholder="Ingrese el nombre del producto">
+                                                   id="nombre" type="text" placeholder="Ingrese el nombre del producto">
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full px-3">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-password">
+                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1" for="descripcion">
                                                 Descripción
                                             </label>
                                             <textarea class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                            id="grid-password" rows="4"></textarea>
+                                            id="descripcion" rows="4"></textarea>
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap -mx-3 mb-2">
                                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-city">
+                                                   for="cantidad">
                                                Cantidad
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                                   id="grid-city" type="number" placeholder="Cantidad del producto">
+                                                   id="cantidad" type="number" placeholder="Cantidad del producto">
                                         </div>
                                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
-                                                   for="grid-city">
+                                                   for="precio">
                                                Precio
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-                                                   id="grid-city" type="text" placeholder="Precio del producto">
+                                                   id="precio" type="text" placeholder="Precio del producto">
                                         </div>
                                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
