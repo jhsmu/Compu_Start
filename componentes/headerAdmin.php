@@ -5,7 +5,7 @@
             $id = "SELECT * FROM administrador WHERE id_administrador= $_SESSION[id_administrador]";
             $admin = "SELECT * FROM administrador";
         ?>
-            <div class="flex justify-between">
+            <div class="flex justify-between" style="margin-right: 20px;">
                 <div class="p-1 mx-3 inline-flex items-center">
                     <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
                     <h1 class="text-white p-2">Compu Start</h1>

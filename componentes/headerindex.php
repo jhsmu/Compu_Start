@@ -6,23 +6,17 @@
 ?>
 
 <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="nombre">
-                <a class="navbar-brand" href="#">CompuStart</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-md border-bottom border-primary">
+        <div class="container-fluid">
+            <a href="./index.php" class="navbar-brand">Compu Start</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target ="#MenuNavegacion">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./index.php">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./nosotros.php">Nosotros</a>
-                        </li>
-                        <li class="nav-item dropdown">
+            </button>
+            <div id="MenuNavegacion" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto" id="nav1">
+                    <li class="nav-item"><a href="./index.php" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="./nosotros.php" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Categorías
                     </a>
@@ -37,24 +31,21 @@
                                 </li>
                                 </ul>
                                 <?php
-                                    }
-                                ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./login-registro.php">Carrito</a> 
-                            </li>
+                                }
+                            ?>
+                        
                             </div> 
                             </div>
-                    </ul>
+                    </li>
+                    <li class="nav-item"><a href="./login-registro.php" class="nav-link">Carrito</a></li>
 
-                    <ul class="navbar-nav ms-auto mb-lg-0">
-                        <li class="nav-item">
-                            <div class="socia-container ">
-                            <a class="nav-link" href="./login-registro.php" id="socia"><i class="fa fa-user"></i></a>
-                            <label for="">Iniciar Sesión</label>
-                             </div>
-                        </li>   
-                    </ul>
-             </div>
-
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                        <a href="./login-registro.php" class="social"><i class="fa fa-user"></i>    Iniciar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         </nav>
-    </header>
+        </header> 
