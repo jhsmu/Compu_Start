@@ -1,6 +1,7 @@
 <?php
     include("./conexion.php");
     $id = $_GET["id_cliente"];
+    error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +78,7 @@
                 echo "<script language='JavaScript'>
                 alert('Los datos se actualizaron correctamente');
                 location.assign('../inicio.php');</script>";
+                error_reporting(0);
 
             }else{
                 echo "<script language='JavaScript'>
