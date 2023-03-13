@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     session_start();
     include("./editar/conexion.php");
     $id_administrador = $_GET["id_administrador"];
@@ -55,7 +56,8 @@
             if($resultado){
                 echo "<script language='JavaScript'>
                 alert('Los datos se actualizaron correctamente');
-                location.assign('./indexAdmin.php');</script>";
+                location.assign('./micuenta.php');</script>";
+                error_reporting(0);
 
             }else{
                 echo "<script language='JavaScript'>
