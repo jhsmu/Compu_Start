@@ -1,56 +1,43 @@
+body{
+    font-family: 'Shantell Sans', cursive;
+}
+
 /* Encabezado */
 
 .navbar {
     height: 100px;
+    border-top: solid 15px #00235B;
+    border-bottom: solid 5px orange;
     background: linear-gradient(to right, #2192FF, #144272);
 }
-
-.navbar a {
-    font-size: 15px;
+.navbar-brand{
+    font-size: 2rem;
+    margin-left: 15px;
     color: #fff;
 }
-.navbar a{
-    padding-right: 55px;
-    padding-bottom: 15px;
+.navbar-brand:hover{
+    color: orange;
 }
-
-.nombre a {
-    font-size: 30px;
-    color: #F9F9F9;
+.navbar-toggler{
+    border: solid 2px #fff;
+    
 }
-
-.transparente li a {
-    color: #141254;
+.nav-link{
+    color: #fff;
+    font-size: 1.1rem;
 }
-
-.socia-container a {
-    height: 30px;
-    width: 30px;
-    margin: 0 5px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 50%;
+.social{
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
 }
-
-label {
-    color: #F9F9F9;
-    margin-right: 0px;
+#menu a{
+    color: #111;
+    background-color: white;
+    font-size: 12px;
 }
-
-label :hover {
-    color: #2192FF;
-}
-
-#socia {
-    color: white;
-    font-size: 20px;
-    padding: 1px;
-}
-
-.socia-container a:hover {
-    background: #AAAA;
+#menu a:hover{
+    color: #00235B;
 }
 
 /* pie de pagina */
@@ -82,7 +69,10 @@ label :hover {
     width: 200px;
     border-radius: 100px;
 }
+.box figure img{
 
+object-fit: cover;
+}
 .pie-pagina .grupo1 .box h2 {
     color: #fff;
     margin-bottom: 25px;
@@ -111,7 +101,14 @@ label :hover {
 .pie-pagina .grupo1 .redes a:hover {
     color: #0f1aab
 }
-
+.grupo1 .box3{
+    margin: 35% 20%;
+}
+.box3 h2{
+    color: #fff;
+    margin-left: 15px;
+    
+}
 .pie-pagina .grupo2 {
     background-color: #141254;
     padding: 15px 10px;
