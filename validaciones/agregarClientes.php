@@ -25,7 +25,7 @@ if (isset($_POST["crear"])) {
         $nombre = $_POST["nombre"];
     } else {
         echo '<script>confirm("Por favor ingrese un nombre valido")</script>';
-        echo '<a href="../login-registro.php">Regresar al registro</a>';
+        echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
     }
 
@@ -33,7 +33,7 @@ if (isset($_POST["crear"])) {
         $apellido = $_POST["apellido"];
     } else {
         echo '<script>confirm("Por favor ingrese un apellido valido")</script>';
-        echo '<a href="../login-registro.php">Regresar al registro</a>';
+        echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
     }
 
@@ -43,7 +43,7 @@ if (isset($_POST["crear"])) {
         $telefono = $_POST["telefono"];
     } else {
         echo '<script>confirm("Por favor ingrese un número de telefono valido")</script>';
-        echo '<a href="../login-registro.php">Regresar al registro</a>';
+        echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
     }
 
@@ -58,7 +58,7 @@ if (isset($_POST["crear"])) {
         $email= $_POST["email_registro"];
     } else {
         echo '<script>confirm("Por favor ingrese un email valido")</script>';
-        echo '<a href="../login-registro.php">Regresar al registro</a>';
+        echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
     }
 
@@ -70,25 +70,25 @@ if (isset($_POST["crear"])) {
                         $contrasena = (htmlentities($_POST["clave"]));
                     } else {
                         echo '<script>confirm("la clave debe tener al menos un número")</script>';
-                        echo '<a href="../login-registro.php">Regresar al registro</a>';
+                        echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
                     }
                 } else {
                     echo '<script>confirm("La contraseña debe tener al menos una mayuscula")</script>';
-                    echo '<a href="../login-registro.php">Regresar al registro</a>';
+                    echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
                 }
             } else {
-                echo '<script>confirm("La contraseña debe tener una minuscula")</script>';
+                echo '<script>confirm("La contraseña debe tener una minuscula")</script> <br>';
             }
         } else {
             echo '<script>alert("La contraseña debe tener minimo 8 digitos")</script>';
-            echo '<a href="../login-registro.php">Regresar al registro</a>';
+            echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
         }
     } else {
         echo '<script>alert("Las contraseñas deben ser iguales")</script>';
-        echo '<a href="../login-registro.php">Regresar al registro</a>';
+        echo '<a href="../login-registro.php">Regresar al registro</a> <br>';
 
     }
 

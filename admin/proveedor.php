@@ -1,4 +1,3 @@
-ELIMINAR PROVEEDOR?
 <?php
 session_start();
 require('../database/basededatos.php');
@@ -90,7 +89,7 @@ $proveedores = $query->fetchAll(PDO::FETCH_ASSOC); //Me traigo los datos que nec
 
                                                     <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white" href="./actualizarProveedor.php?id=<?php echo $proveedor["id_proveedor"]; ?>">
                                                         <i class="fas fa-edit"></i></a>
-                                                    <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                    <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500" href="./editar/eliminarProveedor.php?id=<?php echo $proveedor["id_proveedor"]; ?>" onclick='return confirmar()'>
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -114,6 +113,11 @@ $proveedores = $query->fetchAll(PDO::FETCH_ASSOC); //Me traigo los datos que nec
 
 
     <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        function confirmar() {
+            return confirm('¿Estas seguro?, se eliminarán los datos');
+        }
+    </script>
 
 </body>
 
