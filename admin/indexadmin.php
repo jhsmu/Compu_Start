@@ -1,7 +1,9 @@
 <?php
     session_start();
-
-    require_once './editar/conexion.php';
+    require './editar/conexion.php'; 
+    $sql = "SELECT COUNT(*) total FROM cliente";
+    $result = mysqli_query($conexion, $sql);
+    $fila = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -74,10 +76,10 @@
                         <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
                             <div class="p-4 flex flex-col">
                                 <a href="#" class="no-underline text-white text-2xl">
-                                    900
+                                <?php echo $fila['total'];?>
                                 </a>
                                 <a href="#" class="no-underline text-white text-lg">
-                                    Total Users
+                                    Total Usuarios
                                 </a>
                             </div>
                         </div>
