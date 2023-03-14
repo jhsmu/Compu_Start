@@ -53,7 +53,7 @@
                          <div class="transparentes">
                         <ul class="dropdown-menu" id="menu">
                             <li class="nav-item">
-                                <a class="nav-link dropdown-item" href="./editar/edit.php"><i class="fas fa-edit"></i>Editar Perfil</a>
+                                <a class="nav-link dropdown-item" href="./editar/edit.php?id_cliente=<?php echo $_SESSION["id_usuario"];?>"><i class="fas fa-edit"></i>Editar Perfil</a>
                             </li>
                             <li class="nav-item"><a class="nav-link dropdown-item" href="./Carro/mostrarCarrito.php"><i class="bi bi-cart"></i>Mis Compras</a></li>
                             <li class="nav-item"><a class="nav-link dropdown-item" href="./validaciones/cerrarSesion.php"><i class="fa fa-door-open"></i>Cerrar sesión</a></li>
