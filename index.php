@@ -66,7 +66,9 @@ $imagenes=$consulta2->fetchAll(PDO::FETCH_ASSOC);
                     </figure>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $producto['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn "style="background-color: orange;">Agregar</a>
                         <a href="./categoriaDescripcion.php?id=<?php echo $producto['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
+                        <p>descripcion corta</p>
                     </div>
                 </div>
             </div>
@@ -125,7 +127,9 @@ $imagenes=$consulta2->fetchAll(PDO::FETCH_ASSOC);
                     </figure>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn "style="background-color: orange;">Agregar</a>
                         <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
+                        <p>descripcion corta</p>
                     </div>
                 </div>
             </div>
@@ -179,7 +183,9 @@ $imagenes=$consulta2->fetchAll(PDO::FETCH_ASSOC);
                     </figure>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $productos[$i]['producto'] ?></h5>
+                        <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn " style="background-color: orange;">Agregar</a>
                         <a href="./categoriaDescripcion.php?id=<?php echo $productos[$i]['id_producto'] ?>" class="btn btn-primary">Ver mas</a>
+                        <p>descripcion corta</p>
                     </div>
                 </div>
             </div>

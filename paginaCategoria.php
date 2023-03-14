@@ -15,6 +15,13 @@
   }  
 ?>
 
+<?php
+    include "./database/conexion.php"; 
+    $consulta=$DB_con->prepare('SELECT * FROM categoria');
+    $consulta->execute();
+    $categorias=$consulta->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,28 +30,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- iconos en fontawesome -->
     <script src="https://kit.fontawesome.com/4b93f520b2.js" crossorigin="anonymous"></script>
-    <!-- css foote y el header -->
-    <link rel="stylesheet" href="./css/footer-header.css">
     <!-- css cuerpo -->
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- css foote y el header -->
+        <link rel="stylesheet" href="./css/footer-header.css">
     <title>Compu Start</title>
 </head>
 <body>
-<header>
-  <?php include(("./componentes/headerindex.php")); ?>
-</header>
 
-<br> <br>
-<h2><?php echo $categoria['categoria'] ?></h2>
-<br> <br>
+
+<header>
+       <?php
+       include ("./componentes/headerindex.php")
+       ?>
+  </header> 
+
+
     
     <div class="container">
+      <br> <br>
+      <h2><?php echo $categoria['categoria'] ?></h2>
+      <br> <br>
         <div class="row ">
  <!-- card 1 -->
       <?php

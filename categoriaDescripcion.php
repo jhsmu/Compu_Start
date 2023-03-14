@@ -31,8 +31,8 @@ session_start();
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <!-- css bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- iconos en fontawesome -->
     <script src="https://kit.fontawesome.com/4b93f520b2.js" crossorigin="anonymous"></script>
     <!-- css foote y el header -->
@@ -40,23 +40,20 @@ session_start();
     <!-- css cuerpo -->
     <link rel="stylesheet" href="./css/style_cuerpo.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Compu_start</title>
 </head>
 <body>
     <header>
-    <?php include(("./componentes/headerinicio.php")); ?>
+      <?php 
+      include("./componentes/headerinicio.php"); 
+      ?>
     </header>
     <div class="container">
 
     <div class=" mb-3" style="width: 100%; height: 600px;">
         <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-4">
           <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <br> <br> <br> <br> <br>
@@ -90,20 +87,19 @@ session_start();
             </button>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7" style="margin: 70px 20px ;">
             <div class="card-body">
-              <h2 class="card-title" style="margin: 70px 10px ;" name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
-              <h3 class="card-text"><?php echo 'Marca: '.$marca['marca'] ?></h3>
+              <h2 class="card-title"  name="monitorAOC24" id="nombre"><?php echo $producto['producto'] ?></h2>
+              <p class="card-text"><h3>Marca </h3><?php echo $marca['marca'] ?></p>
               <h3>Características</h3>
               <p class="card-text"><?php echo $producto['descripcion'] ?></p>
               <h3 name="precio" id="precio"><?php echo '$'.$producto['precio'] ?></h3>
                 <br>
                 <form action="" method="post">
-                     <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
+                    <input type="text" name="id" id="id" value="<?php echo $producto['id_producto'] ?>" hidden>
                     <input type="text" name="producto" id="producto" value="<?php echo $producto['producto'] ?>" hidden>
                     <input type="text" name="precio" id="precio" value="<?php echo $producto['precio'] ?>" hidden>
-                    <input type="number" name="cantidad" id="cantidadRef" value="<?php echo $producto['cantidad'] ?>" hidden>
-                    <p  name="" id="" style="color:gray;"><?php echo $producto['cantidad'] ?> Unidades disponibles</p>
+
                   <div class="row">
                     <div class="row g-3">
                       <div class="col-2">
@@ -117,7 +113,7 @@ session_start();
                       <div class="col-auto">
                         <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg" disabled>Comprar</button>
                       </div>
-                      <div class="col-2">
+                      <div class="col-auto">
                         <a type="submit" class="btn btn-lg" style="background: #144272; color:#fff" href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>";>Atras</a>
                       </div>
 
@@ -128,10 +124,13 @@ session_start();
                       <div class="col-auto">
                         <button type="submit" name="botonAdd" value="agregar" class="btn btn-success btn-lg">Comprar</button>
                       </div>
-                      <div class="col-2">
+                      <div class="col-auto">
                         <a type="submit" class="btn btn-lg" style="background: #144272; color:#fff" href="./categoriaPagina.php?id=<?php echo $producto['id_categoria'] ?>";>Atras</a>
                       </div>
-
+                          <div class="col-auto">
+                          <input type="number" name="cantidad" id="cantidadRef" value="<?php echo $producto['cantidad'] ?>" hidden>
+                    <p  name="" id="" style="color:gray;"><?php echo $producto['cantidad'] ?> Unidades disponibles</p>
+                          </div>
                       <?php
                         }
                       ?>
@@ -143,8 +142,8 @@ session_start();
           </div>
 
     </div>
-
-
+    </div>
+    </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 	<script>
